@@ -1,0 +1,19 @@
+{
+  "name": "mattriley.info",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-riley/mattriley.info.git"
+  },
+  "author": "Matt Riley <matt@mattriley.me> (https://mattriley.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matt-riley/mattriley.info/issues"
+  },
+  "homepage": "https://github.com/matt-riley/mattriley.info#readme"
+}
