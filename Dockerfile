@@ -6,9 +6,11 @@ WORKDIR $APP_HOME
 COPY package-lock.json package.json $APP_HOME/
 
 FROM base AS dependencies
+RUN apk --virtual .build-deps --no-cache add python2 make g++ 
 RUN npm ci
 
 FROM base AS releaseDependencies
+RUN apk --virtual .build-deps --no-cache add python2 make g++ 
 RUN npm ci --only=production
 
 FROM dependencies AS build
