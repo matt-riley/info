@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require("apollo-server");
+import { ApolloServer, gql } from "apollo-server-express";
 
 const typeDefs = gql`
   type Query {
@@ -13,7 +13,9 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({
-  typeDefs,
+const apollo = new ApolloServer({
   resolvers,
+  typeDefs,
 });
+
+export default apollo;

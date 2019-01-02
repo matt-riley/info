@@ -16,3 +16,5 @@ if (process.env.NODE_ENV === "production") {
 app.disable("x-powered-by");
 
 app.set("port", process.env.PORT || 3000);
+
+export default app;

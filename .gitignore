@@ -4,8 +4,4 @@ build/
 .env
 *.rdb
 .DS_Store
-.next/
-dist/
-lib/mattriley.work
-status.mattriley.info
-mattriley.io
+lib/
