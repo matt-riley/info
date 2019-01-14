@@ -36,7 +36,7 @@
     "dotenv": "6.2.0",
     "express": "4.16.4",
     "express-enforces-ssl": "1.1.0",
-    "fast-xml-parser": "^3.12.11",
+    "fast-xml-parser": "^3.12.12",
     "graphql": "14.0.2",
     "helmet": "3.15.0",
     "winston": "3.1.0"
