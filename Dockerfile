@@ -22,6 +22,6 @@ FROM base AS release
 LABEL version="0.0.1"
 ENV NODE_ENV=production
 COPY --from=releaseDependencies $APP_HOME/node_modules $APP_HOME/node_modules
-COPY --from=build $APP_HOME/lib $APP_HOME/lib
+COPY --from=build $APP_HOME/lib $APP_HOME/
 EXPOSE 3000
-CMD ["npm", "run", "start-server"]
+CMD ["npm", "run", "start"]

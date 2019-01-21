@@ -1,3 +1,5 @@
+import "./utils/dotEnv";
+
 import * as profiler from "@google-cloud/profiler";
 import * as traceAgent from "@google-cloud/trace-agent";
 if (process.env.NODE_ENV === "production") {

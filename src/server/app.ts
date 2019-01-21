@@ -10,9 +10,9 @@ const defaultOrigin: string[] = process.env.NODE_ENV !== "production" ? ["https:
 const origin = process.env.CORS_URLS ? process.env.CORS_URLS.split(",") : ["https://api.mattriley.info"];
 
 const corsOptions = {
-  origin: defaultOrigin.concat(origin),
-  methods: ["GET", "POST"],
   allowedHeaders: ["Authorization", "Content-Type"],
+  methods: ["GET", "POST"],
+  origin: defaultOrigin.concat(origin),
   preflightContinue: false,
 };
 
