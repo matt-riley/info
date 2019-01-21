@@ -7,7 +7,7 @@ const app = express();
 app.enable("trust proxy");
 
 const defaultOrigin: string[] = process.env.NODE_ENV !== "production" ? ["https://localhost"] : [];
-const origin = process.env.CORS_URLS ? process.env.CORS_URLS.split(",") : ["https://api.mattriley.info"];
+const origin = process.env.CORS_URLS ? process.env.CORS_URLS.split(",") : ["https://mattriley.info"];
 
 const corsOptions = {
   allowedHeaders: ["Authorization", "Content-Type"],
