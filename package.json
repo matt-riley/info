@@ -2,9 +2,12 @@
   "name": "mattriley.info",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "lib/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gcloud beta app deploy",
     "build": "tsc",
+    "prestart": "npm run build",
     "start": "node .",
     "start:dev": "ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
