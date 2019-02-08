@@ -9,6 +9,8 @@
     "build": "tsc",
     "getEnv": "node utils/getEnv.js",
     "prestart": "npm run getEnv",
+    "predeploy": "npm run build",
+    "deploy": "gcloud beta app deploy",
     "start": "node .",
     "prestart:dev": "npm run build",
     "start:dev": "node ./lib",
