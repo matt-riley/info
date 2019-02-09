@@ -14,7 +14,7 @@ action "Login to GCP" {
   needs = ["On push to Master"]
 }
 
-action "Set Project" {
+action "Set GCP Project" {
   uses = "actions/gcloud/cli@cb9143e453da6e6537b3eff255e16fbcd09b4f9e"
   args = "config set project mattriley-info"
   secrets = ["GCLOUD_AUTH"]
@@ -25,5 +25,5 @@ action "Deploy To GCP" {
   uses = "actions/gcloud/cli@cb9143e453da6e6537b3eff255e16fbcd09b4f9e"
   args = "app deploy"
   secrets = ["GCLOUD_AUTH"]
-  needs = ["Set Project"]
+  needs = ["Set GCP Project"]
 }
