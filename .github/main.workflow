@@ -24,6 +24,6 @@ action "GitHub Action for Google Cloud" {
 action "GitHub Action for Google Cloud-1" {
   uses = "actions/gcloud/cli@cb9143e453da6e6537b3eff255e16fbcd09b4f9e"
   needs = ["GitHub Action for Google Cloud"]
-  secrets = ["GCLOUD_AUTH"]
   args = "app deploy"
+  secrets = ["GCLOUD_AUTH"]
 }
