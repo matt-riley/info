@@ -1,6 +1,6 @@
 workflow "Deploy" {
   on = "push"
-  resolves = ["GitHub Action for Google Cloud"]
+  resolves = ["GitHub Action for Google Cloud-1"]
 }
 
 action "Filters for GitHub Actions" {
@@ -17,5 +17,13 @@ action "GitHub Action for Google Cloud SDK auth" {
 action "GitHub Action for Google Cloud" {
   uses = "actions/gcloud/cli@cb9143e453da6e6537b3eff255e16fbcd09b4f9e"
   needs = ["GitHub Action for Google Cloud SDK auth"]
+  args = "gcloud config set project mattriley-info"
+  secrets = ["GCLOUD_AUTH"]
+}
+
+action "GitHub Action for Google Cloud-1" {
+  uses = "actions/gcloud/cli@cb9143e453da6e6537b3eff255e16fbcd09b4f9e"
+  needs = ["GitHub Action for Google Cloud"]
+  secrets = ["GCLOUD_AUTH"]
   args = "app deploy"
 }
