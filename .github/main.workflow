@@ -17,5 +17,5 @@ action "GitHub Action for Google Cloud SDK auth" {
 action "GitHub Action for Google Cloud" {
   uses = "actions/gcloud/cli@cb9143e453da6e6537b3eff255e16fbcd09b4f9e"
   needs = ["GitHub Action for Google Cloud SDK auth"]
-  args = "beta app deploy"
+  args = "app deploy"
 }
