@@ -1,6 +1,5 @@
 import cors from "cors";
 import express from "express";
-import express_enforces_ssl from "express-enforces-ssl";
 import helmet from "helmet";
 
 const app = express();
@@ -19,7 +18,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express_enforces_ssl());
   app.use(helmet.hsts({
     maxAge: 31536000,
     preload: true,

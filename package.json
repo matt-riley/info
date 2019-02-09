@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Matt Riley Info API",
   "repository": "https://github.com/matt-riley/mattapps/tree/master/api.mattriley.info",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "prebuild": "npm run lint:fix",
     "build": "tsc",
