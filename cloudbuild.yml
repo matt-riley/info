@@ -1,14 +1,4 @@
 steps:
-  - name: "gcr.io/cloud-builders/docker"
-    args:
-      [
-        "build",
-        "-t",
-        "gcr.io/mattriley-info/api.mattriley.info:$COMMIT_SHA",
-        ".",
-      ]
-  - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/mattriley-info/api.mattriley.info:$COMMIT_SHA"]
   - name: "gcr.io/cloud-builders/gcloud"
-    args: ["app", "deploy"]
+    args: ["beta", "app", "deploy"]
 timeout: "1600s"
