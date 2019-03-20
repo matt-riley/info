@@ -33,7 +33,7 @@
     "typescript": "3.3.4000"
   },
   "dependencies": {
-    "@google-cloud/profiler": "1.0.1",
+    "@google-cloud/profiler": "1.0.2",
     "@google-cloud/storage": "2.4.3",
     "@google-cloud/trace-agent": "3.6.0",
     "apollo-datasource-rest": "0.3.2",
