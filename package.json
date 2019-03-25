@@ -5,15 +5,17 @@
   "repository": "https://github.com/matt-riley/mattapps/tree/master/api.mattriley.info",
   "main": "lib/index.js",
   "scripts": {
+    "commit": "npx git-cz",
     "prebuild": "npm run lint:fix",
     "build": "tsc",
     "getEnv": "node utils/getEnv.js",
     "prestart": "npm run getEnv",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && gcloud config set project mattriley-info",
     "deploy": "gcloud beta app deploy",
     "start": "node .",
     "prestart:dev": "npm run build",
     "start:dev": "node ./lib",
+    "release": "standard-version",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lint:fix": "tslint -c tslint.json -p tsconfig.json --fix"
   },
@@ -28,7 +30,10 @@
     "@types/graphql": "14.0.7",
     "@types/helmet": "0.0.43",
     "@types/node": "11.11.6",
+    "commitizen": "3.0.7",
+    "cz-conventional-changelog": "2.1.0",
     "npm-run-all": "4.1.5",
+    "standard-version": "5.0.2",
     "tslint": "5.14.0",
     "typescript": "3.3.4000"
   },
@@ -50,5 +55,15 @@
   "engines": {
     "node": ">=10.0.0",
     "npm": "6.x"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "standard-version": {
+    "skip": {
+      "tag": true
+    }
   }
 }
