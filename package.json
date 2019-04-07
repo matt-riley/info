@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@google-cloud/profiler": "1.1.2",
-    "@google-cloud/storage": "2.4.3",
+    "@google-cloud/storage": "2.5.0",
     "@google-cloud/trace-agent": "3.6.0",
     "apollo-datasource-rest": "0.3.2",
     "apollo-server-express": "2.4.8",
