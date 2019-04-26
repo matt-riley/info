@@ -23,7 +23,7 @@
   "author": "Matt Riley <matt@mattriley.me> (https://mattriley.io)",
   "license": "MIT",
   "devDependencies": {
-    "@types/cors": "2.8.4",
+    "@types/cors": "2.8.5",
     "@types/dotenv": "6.1.1",
     "@types/express": "4.16.1",
     "@types/express-enforces-ssl": "1.1.1",
