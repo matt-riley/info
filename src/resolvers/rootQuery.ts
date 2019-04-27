@@ -1,9 +1,9 @@
+import { DocumentSnapshot, QuerySnapshot } from "@google-cloud/firestore";
+import { FeatureArgs } from "../interfaces/feature_args";
+import { FeaturesArgs } from "../interfaces/features_args";
+import { Service } from "../interfaces/service";
+import { ServiceArgs } from "../interfaces/service_args";
 import admin from "../services/firebase";
-import { FeaturesArgs } from '../interfaces/features_args';
-import { QuerySnapshot, DocumentSnapshot } from "@google-cloud/firestore";
-import { Service } from '../interfaces/service';
-import { ServiceArgs } from '../interfaces/service_args';
-import { FeatureArgs } from '../interfaces/feature_args';
 
 const rootQuery = {
   Query: {
@@ -27,26 +27,26 @@ const rootQuery = {
         console.info(`Getting feature switches for ${projects.id}`);
         const data = projects.data();
         const keys = Object.keys(data);
-        const features = keys.map(key => {
+        const features = keys.map((key) => {
           return {
             project: projects.id,
             name: key,
             enabled: data[key],
-          }
-        })
+          };
+        });
         return features;
       }
       const featureArray = projects.docs.flatMap((project, index) => {
         console.info(`Getting feature switches for ${project.id}`);
-        const data = project.data()
+        const data = project.data();
         const keys = Object.keys(data);
-        const features = keys.map(key => {
+        const features = keys.map((key) => {
           return {
             project: project.id,
             name: key,
             enabled: data[key],
-          }
-        })
+          };
+        });
         return features;
       }) as [];
 
@@ -61,9 +61,9 @@ const rootQuery = {
       return {
         project: args.project,
         name: key,
-        enabled: data[key]
-      }
-    }
+        enabled: data[key],
+      };
+    },
   },
 };
 
