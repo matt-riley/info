@@ -7,7 +7,7 @@ apollo.applyMiddleware({ app, path: "/" });
 
 const server = () => http.createServer(app).listen(app.get("port"), () => {
   // tslint:disable-next-line:no-console
-  console.log("Express server listening on port " + app.get("port"));
+  console.info("Express server listening on port " + app.get("port"));
 });
 
 export default server;

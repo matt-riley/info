@@ -7,3 +7,4 @@ build/
 .DS_Store
 lib/
 service-account.json
+env_variables.yaml
