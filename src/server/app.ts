@@ -1,3 +1,4 @@
+import Sentry from "@sentry/node";
 import cors from "cors";
 import express from "express";
 import helmet from "helmet";
@@ -22,6 +23,9 @@ if (process.env.NODE_ENV === "production") {
     maxAge: 31536000,
     preload: true,
   }));
+
+  app.use(Sentry.Handlers.requestHandler() as express.RequestHandler);
+  app.use(Sentry.Handlers.errorHandler() as express.ErrorRequestHandler);
 }
 
 app.disable("x-powered-by");
