@@ -40,7 +40,7 @@
     "@google-cloud/profiler": "1.1.2",
     "@google-cloud/storage": "2.5.0",
     "@google-cloud/trace-agent": "3.6.1",
-    "@sentry/node": "5.1.0",
+    "@sentry/node": "5.1.2",
     "apollo-datasource-rest": "0.3.2",
     "apollo-server-express": "2.4.8",
     "cors": "2.8.5",
