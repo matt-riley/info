@@ -1,20 +1,80 @@
+"""Feature switch type"""
 type Feature {
+  """The project that the feature switch belongs to"""
   project: String
+
+  """Name of the feature switch"""
   name: String
+
+  """If the switch is on/off (true/false)"""
   enabled: Boolean
 }
 
-type Query {
-  services(name: String, status: String, host: String, language: String): [Service] @deprecated(reason: "No longer needed")
-  features(project: String, feature: String): [Feature]
-  feature(project: String!, feature: String!): Feature
+"""Information relating to the user relating to Music"""
+type Music {
+  """A list of the users recently played tracks"""
+  tracks(
+    """Limit the amount of recently played tracks to return"""
+    limit: Int
+
+    """The page of recently played tracks which you wish to return"""
+    page: Int
+  ): [Track]
 }
 
+"""Root Query"""
+type Query {
+  """
+  Returns a list of feature switches. Available args are 'project' and 'feature'
+  """
+  features(project: String, feature: String): [Feature]
+
+  """
+  Returns a single feature switch. Available args are 'project' and 'feature'
+  """
+  feature(project: String!, feature: String!): Feature
+
+  """User details"""
+  user: User
+
+  """[DEPRECATED]: A list of services"""
+  services(name: String, status: String, host: String, language: String): [Service] @deprecated(reason: "No longer needed")
+}
+
+"""service type"""
 type Service {
+  """Name of the service"""
   name: String
+
+  """Language the service is written in e.g. Ruby"""
   language: String
+
+  """URL of the service"""
   url: String
+
+  """Host of the service"""
   host: String
+
+  """Description of the service"""
   description: String
+
+  """Status of the service"""
   status: String
+}
+
+type Track {
+  """The name of the track"""
+  name: String
+
+  """The musicbrainz id for the track"""
+  id: ID
+
+  """The url for the last.fm page for the track"""
+  url: String
+}
+
+"""User type - describes the user"""
+type User {
+  """Music related information"""
+  music: Music
 }

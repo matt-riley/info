@@ -1,4 +1,4 @@
-import rootQuery from "./rootQuery";
+import rootQuery from './rootQuery';
 
 const allResolvers = {
   ...rootQuery,

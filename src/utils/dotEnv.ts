@@ -1,9 +1,9 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 
 const environment = process.env.NODE_ENV;
 
-if (environment !== "production") {
+if (environment !== 'production') {
   dotenv.config({
-    path: ".env",
+    path: '.env',
   });
 }
