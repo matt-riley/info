@@ -1,4 +1,5 @@
 export default `
+  "Track information"
   type Track {
     "The name of the track"
     name: String

@@ -4,6 +4,7 @@ import responseCachePlugin from 'apollo-server-plugin-response-cache';
 
 import allResolvers from '../resolvers';
 import schema from '../schema/index';
+import logger from '../utils/logger';
 
 const typeDefs = schema;
 
@@ -14,15 +15,18 @@ const memcache = new MemcachedCache(process.env.MEMCACHE_URL, {
   retry: 20000,
 });
 
+const persistedQueries = process.env.NODE_ENV === 'production' ? { cache: memcache } : false;
+const plugins = process.env.NODE_ENV === 'production' ? [responseCachePlugin()] : [];
+const cache = process.env.NODE_ENV === 'production' ? memcache : undefined;
+
 const apollo = new ApolloServer({
-  cache: memcache,
+  cache,
   context: () => ({
     LastFMApiKey: process.env.LASTFM_KEY,
+    logger,
   }),
-  persistedQueries: {
-    cache: memcache,
-  },
-  plugins: [responseCachePlugin()],
+  persistedQueries,
+  plugins,
   resolvers,
   typeDefs,
 });

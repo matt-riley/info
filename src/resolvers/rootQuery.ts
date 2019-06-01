@@ -1,4 +1,6 @@
 import { DocumentSnapshot, QuerySnapshot } from '@google-cloud/firestore';
+import { APIContext } from 'interfaces/api_context';
+import { Logger } from 'winston';
 import { FeatureArgs } from '../interfaces/feature_args';
 import { FeaturesArgs } from '../interfaces/features_args';
 import { Service } from '../interfaces/service';
@@ -19,13 +21,12 @@ const rootQuery = {
         project: args.project,
       };
     },
-    async features(_: void, args: FeaturesArgs) {
+    async features(_: void, args: FeaturesArgs, context: APIContext) {
       const featureProjectsRef = await admin.firestore().collection('features');
       // tslint:disable-next-line: max-line-length
       const projects = (args.project) ? await featureProjectsRef.doc(args.project).get() : await featureProjectsRef.get();
       if (projects instanceof DocumentSnapshot) {
-        // tslint:disable-next-line: no-console
-        console.info(`Getting feature switches for ${projects.id}`);
+        context.logger.info(`Getting feature switches for ${projects.id}`);
         const data = projects.data();
         const keys = Object.keys(data);
         const features = keys.map((key) => {
@@ -38,8 +39,7 @@ const rootQuery = {
         return features;
       }
       const featureArray = projects.docs.flatMap((project, index) => {
-        // tslint:disable-next-line: no-console
-        console.info(`Getting feature switches for ${project.id}`);
+        context.logger.info(`Getting feature switches for ${project.id}`);
         const data = project.data();
         const keys = Object.keys(data);
         const features = keys.map((key) => {
@@ -53,6 +53,9 @@ const rootQuery = {
       }) as [];
 
       return featureArray;
+    },
+    user(_: void) {
+      return;
     },
     async services(_: void, args: ServiceArgs) {
       const services = await admin.firestore().collection('services').get();
