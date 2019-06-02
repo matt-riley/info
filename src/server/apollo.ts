@@ -4,6 +4,7 @@ import responseCachePlugin from 'apollo-server-plugin-response-cache';
 
 import allResolvers from '../resolvers';
 import schema from '../schema/index';
+import dataSources from '../services';
 import logger from '../utils/logger';
 
 const typeDefs = schema;
@@ -22,9 +23,10 @@ const cache = process.env.NODE_ENV === 'production' ? memcache : undefined;
 const apollo = new ApolloServer({
   cache,
   context: () => ({
-    LastFMApiKey: process.env.LASTFM_KEY,
+    LastFMKey: process.env.LASTFM_KEY,
     logger,
   }),
+  dataSources,
   persistedQueries,
   plugins,
   resolvers,

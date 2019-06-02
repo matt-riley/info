@@ -1,6 +1,5 @@
-import { DocumentSnapshot, QuerySnapshot } from '@google-cloud/firestore';
+import { DocumentSnapshot } from '@google-cloud/firestore';
 import { APIContext } from 'interfaces/api_context';
-import { Logger } from 'winston';
 import { FeatureArgs } from '../interfaces/feature_args';
 import { FeaturesArgs } from '../interfaces/features_args';
 import { Service } from '../interfaces/service';
@@ -55,7 +54,7 @@ const rootQuery = {
       return featureArray;
     },
     user(_: void) {
-      return;
+      return '';
     },
     async services(_: void, args: ServiceArgs) {
       const services = await admin.firestore().collection('services').get();
