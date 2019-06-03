@@ -1,5 +1,5 @@
 import { DocumentSnapshot } from '@google-cloud/firestore';
-import { APIContext } from 'interfaces/api_context';
+import { APIContext } from '../interfaces/api_context';
 import { FeatureArgs } from '../interfaces/feature_args';
 import { FeaturesArgs } from '../interfaces/features_args';
 import { Service } from '../interfaces/service';

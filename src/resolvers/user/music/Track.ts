@@ -1,4 +1,4 @@
-import { LastFMRecentTrack } from 'interfaces/lastfm_recent_tracks';
+import { LastFMRecentTrack } from '../../../interfaces/lastfm_recent_tracks';
 
 const track = {
   Track: {
