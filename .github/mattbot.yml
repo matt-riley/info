@@ -1,3 +1,5 @@
+ignoreUser:
+  - 'matt-riley'
 isGraphQL: true
 schemaCheck:
   paths:
