@@ -1,5 +1,5 @@
 import { ApolloError } from 'apollo-server-core';
-import { APIContext } from 'interfaces/api_context';
+import { APIContext } from '../../../interfaces/api_context';
 
 const musicResolver = {
   Music: {

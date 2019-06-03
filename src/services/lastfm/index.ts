@@ -1,5 +1,5 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
-import { LastFMRecentTrack, LastFMRecentTracksRootObject } from 'interfaces/lastfm_recent_tracks';
+import { LastFMRecentTrack, LastFMRecentTracksRootObject } from '../../interfaces/lastfm_recent_tracks';
 
 export default class LastFMAPI extends RESTDataSource {
   constructor() {

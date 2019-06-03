@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/matt-riley/api.mattriley.info/compare/v1.1.2...v1.1.3) (2019-06-03)
+
+
+### Bug Fixes
+
+* **Cache doesn't work:** Removes caching as it wasn't working on App Engine ([713d8ee](https://github.com/matt-riley/api.mattriley.info/commit/713d8ee))
+
+
+
 ### [1.1.2](https://github.com/matt-riley/api.mattriley.info/compare/v1.1.0...v1.1.2) (2019-06-02)
 
 
