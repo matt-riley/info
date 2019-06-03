@@ -14,7 +14,6 @@
     "@sentry/node": "5.4.0",
     "apollo-datasource-rest": "0.5.0",
     "apollo-server-express": "2.6.1",
-    "cors": "2.8.5",
     "dotenv": "8.0.0",
     "express": "4.17.1",
     "express-enforces-ssl": "1.1.0",
@@ -25,7 +24,6 @@
   },
   "description": "Matt Riley Info API",
   "devDependencies": {
-    "@types/cors": "2.8.5",
     "@types/dotenv": "6.1.1",
     "@types/express": "4.16.1",
     "@types/express-enforces-ssl": "1.1.1",
