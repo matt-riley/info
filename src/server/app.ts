@@ -1,6 +1,6 @@
 import * as Sentry from '@sentry/node';
 import cors from 'cors';
-import express from 'express';
+import express, { NextFunction } from 'express';
 import helmet from 'helmet';
 
 const app = express();
@@ -24,12 +24,15 @@ if (process.env.NODE_ENV === 'production') {
     preload: true,
   }));
 
-  app.use(Sentry.Handlers.requestHandler() as express.RequestHandler);
-  app.use(Sentry.Handlers.errorHandler() as express.ErrorRequestHandler);
+  app.use(Sentry.Handlers.requestHandler());
+  app.use(Sentry.Handlers.errorHandler());
+
+  app.use(function onError(err: any, req: any, res: any, next: NextFunction) {
+    res.statusCode = 500;
+    res.end(res.sentry + '\n');
+  });
 }
 
 app.disable('x-powered-by');
-
-app.set('port', process.env.PORT || 3000);
 
 export default app;

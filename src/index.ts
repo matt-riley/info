@@ -15,6 +15,13 @@ if (process.env.NODE_ENV === 'production') {
   profiler.start();
 }
 
-import server from './server';
+import apollo from './server/apollo';
+import app from './server/app';
+import logger from './utils/logger';
 
-server();
+apollo.applyMiddleware({ app, path: '/' });
+
+const port = process.env.PORT || 8080;
+const server = app.listen({ port }, () => {
+  logger.info(`🚀 Server ready!`);
+});
