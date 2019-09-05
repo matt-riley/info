@@ -19,7 +19,7 @@
     "express-enforces-ssl": "1.1.0",
     "firebase-admin": "8.4.0",
     "graphql": "14.5.4",
-    "helmet": "3.20.1",
+    "helmet": "3.21.0",
     "winston": "3.2.1"
   },
   "description": "Matt Riley Info API",
