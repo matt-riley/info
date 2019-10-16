@@ -14,7 +14,7 @@
     "@sentry/node": "5.7.1",
     "apollo-datasource-rest": "0.6.5",
     "apollo-server-express": "2.9.6",
-    "dotenv": "8.1.0",
+    "dotenv": "8.2.0",
     "express": "4.17.1",
     "express-enforces-ssl": "1.1.0",
     "firebase-admin": "8.6.0",
