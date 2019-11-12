@@ -11,7 +11,7 @@
     "@google-cloud/profiler": "3.0.1",
     "@google-cloud/storage": "4.1.1",
     "@google-cloud/trace-agent": "4.2.3",
-    "@sentry/node": "5.7.1",
+    "@sentry/node": "5.8.0",
     "apollo-datasource-rest": "0.6.6",
     "apollo-server-express": "2.9.7",
     "dotenv": "8.2.0",
