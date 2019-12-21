@@ -16,7 +16,11 @@ export interface NexusGenEnums {
 }
 
 export interface NexusGenRootTypes {
-  Feature: t.Feature;
+  Feature: { // root type
+    enabled?: boolean | null; // Boolean
+    name?: string | null; // String
+    project?: string | null; // String
+  };
   Music: { // root type
     tracks?: Array<NexusGenRootTypes['Track'] | null> | null; // [Track]
   };
