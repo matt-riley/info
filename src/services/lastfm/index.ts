@@ -7,7 +7,7 @@ export default class LastFMAPI extends RESTDataSource {
     this.baseURL = 'http://ws.audioscrobbler.com';
   }
 
-  public async getRecentTracks({ limit, page }: { limit: number, page: number }):
+  public async getRecentTracks({ limit, page }: { limit?: number, page?: number }):
     Promise<LastFMRecentTrack[]> {
     const data: LastFMRecentTracksRootObject = await this.get('2.0/', {
       limit,

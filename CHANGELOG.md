@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/matt-riley/api.mattriley.info/compare/v1.1.3...v2.0.0) (2019-12-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **add release:** Removes a load of fields that were not being used and ultimately just clutter the
+place up
+* **nexus:** Totally changes the way it is written
+
+### Features
+
+* **add release:** add release feature added ([#374](https://github.com/matt-riley/api.mattriley.info/issues/374)) ([1483557](https://github.com/matt-riley/api.mattriley.info/commit/1483557e89b8c73f109f86b9d2cce94b7816e095)), closes [#368](https://github.com/matt-riley/api.mattriley.info/issues/368)
+* **nexus:** move to nexus ([18d7ced](https://github.com/matt-riley/api.mattriley.info/commit/18d7ced8468a215d9ae85b6af52664591899dbe9)), closes [#370](https://github.com/matt-riley/api.mattriley.info/issues/370)
+
 ### [1.1.3](https://github.com/matt-riley/api.mattriley.info/compare/v1.1.2...v1.1.3) (2019-06-03)
 
 

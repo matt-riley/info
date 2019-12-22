@@ -1,9 +1,5 @@
-import music from './Music';
-import user from './User';
+import User from './user';
 
-const User = `
-  ${user}
-  ${music}
-`;
-
-export default User;
+export {
+  User,
+};

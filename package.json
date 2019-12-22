@@ -6,52 +6,47 @@
     }
   },
   "dependencies": {
-    "@google-cloud/debug-agent": "3.2.0",
-    "@google-cloud/logging-winston": "0.11.1",
-    "@google-cloud/profiler": "2.0.1",
-    "@google-cloud/storage": "2.5.0",
-    "@google-cloud/trace-agent": "3.6.1",
-    "@sentry/node": "5.4.0",
-    "apollo-datasource-rest": "0.5.0",
-    "apollo-server-express": "2.6.1",
-    "cors": "2.8.5",
-    "dotenv": "8.0.0",
+    "@google-cloud/debug-agent": "4.2.1",
+    "@google-cloud/logging-winston": "3.0.2",
+    "@google-cloud/profiler": "3.0.1",
+    "@google-cloud/storage": "4.1.3",
+    "@google-cloud/trace-agent": "4.2.4",
+    "@sentry/node": "5.10.2",
+    "apollo-datasource-rest": "0.6.10",
+    "apollo-server-express": "2.9.14",
+    "dotenv": "8.2.0",
     "express": "4.17.1",
     "express-enforces-ssl": "1.1.0",
-    "firebase-admin": "8.0.0",
-    "graphql": "14.3.1",
-    "helmet": "3.18.0",
+    "firebase-admin": "8.9.0",
+    "graphql": "14.5.8",
+    "helmet": "3.21.2",
+    "nexus": "0.12.0-rc.5",
     "winston": "3.2.1"
   },
   "description": "Matt Riley Info API",
   "devDependencies": {
-    "@types/cors": "2.8.5",
-    "@types/dotenv": "6.1.1",
-    "@types/express": "4.16.1",
+    "@arkweid/lefthook": "0.7.0",
+    "@types/dotenv": "8.2.0",
+    "@types/express": "4.17.2",
     "@types/express-enforces-ssl": "1.1.1",
-    "@types/graphql": "14.2.0",
-    "@types/helmet": "0.0.43",
+    "@types/graphql": "14.5.0",
+    "@types/helmet": "0.0.45",
     "@types/memcached": "2.2.6",
-    "@types/node": "12.0.4",
-    "commitizen": "3.1.1",
-    "cz-conventional-changelog": "2.1.0",
-    "husky": "2.3.0",
-    "nodemon": "1.19.1",
+    "@types/node": "12.12.21",
+    "@types/node-fetch": "2.5.4",
+    "commitizen": "4.0.3",
+    "cz-conventional-changelog": "3.0.2",
+    "nodemon": "2.0.2",
     "npm-run-all": "4.1.5",
-    "rimraf": "2.6.3",
-    "standard-version": "6.0.1",
-    "ts-node": "8.2.0",
-    "tslint": "5.17.0",
-    "typescript": "3.5.1"
+    "rimraf": "3.0.0",
+    "standard-version": "7.0.1",
+    "ts-node": "8.5.4",
+    "tslint": "5.20.1",
+    "typescript": "3.7.3"
   },
   "engines": {
     "node": ">=10.0.0",
     "npm": "6.x"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build && git add -A"
-    }
   },
   "keywords": [],
   "license": "MIT",
@@ -59,8 +54,7 @@
   "name": "api.mattriley.info",
   "repository": "https://github.com/matt-riley/api.mattriley.info",
   "scripts": {
-    "build": "run-p tsc build:schema",
-    "build:schema": "ts-node -T ./scripts/update-schema.ts",
+    "build": "run-p tsc",
     "commit": "npx git-cz",
     "deploy": "gcloud app deploy",
     "lint": "tslint -c ./tslint.json -p tsconfig.json",
@@ -78,5 +72,5 @@
       "tag": true
     }
   },
-  "version": "1.1.3"
+  "version": "2.0.0"
 }
