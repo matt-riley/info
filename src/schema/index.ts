@@ -6,51 +6,34 @@ import {
 } from 'nexus';
 
 import path from 'path';
-import Feature from './feature';
-import { Music, Track } from './music/index';
-import { Service } from './services';
+import { Music, Release, Track } from './music/index';
 import { User } from './user';
 
 const Query = objectType({
   description: 'Root Query',
   name: 'Query',
   definition(t) {
-    t.field('features', {
-      args: {
-        feature: stringArg(),
-        project: stringArg(),
-      },
-      description: 'Returns a list of feature switches. Available args are \'project\' and \'feature\'',
-      list: [false],
-      nullable: true,
-      type: Feature,
-    });
-    t.field('feature', {
-      args: {
-        feature: stringArg({ required: true }),
-        project: stringArg({ required: true }),
-      },
-      description: 'Returns a single feature switch. Available args are \'project\' and \'feature\'',
-      nullable: true,
-      type: Feature,
-    });
     t.field('user', {
       description: 'User details',
       nullable: true,
       type: User,
     });
-    t.field('services', {
+  },
+});
+
+const Mutation = objectType({
+  description: 'Root mutation',
+  name: 'Mutation',
+  definition(t) {
+    t.field('addRelease', {
       args: {
-        host: stringArg(),
-        language: stringArg(),
-        name: stringArg(),
-        status: stringArg(),
+        id: stringArg(),
       },
-      deprecation: 'No longer needed',
-      description: '[DEPRECATED]: A list of services',
-      list: [false],
-      nullable: true,
-      type: Service,
+      description: 'Add a release',
+      type: Release,
+      resolve(_root, { id }, ctx) {
+        return ctx.dataSources.discogs.addRelease(id);
+      },
     });
   },
 });
@@ -69,7 +52,7 @@ const schema = makeSchema({
       },
     ],
   },
-  types: [Feature, Track, Music, Query, Service, User],
+  types: [Track, Music, Query, Release, User, Mutation],
 });
 
 export default schema;

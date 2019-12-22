@@ -2,18 +2,6 @@
 ### Do not make changes to this file directly
 
 
-"""Feature switch type"""
-type Feature {
-  """If the switch is on/off (true/false)"""
-  enabled: Boolean
-
-  """Name of the feature switch"""
-  name: String
-
-  """The project that the feature switch belongs to"""
-  project: String
-}
-
 """Information relating to the user relating to Music"""
 type Music {
   """A list of the users recently played tracks"""
@@ -23,47 +11,39 @@ type Music {
 
     """The page of recently played tracks which you wish to return"""
     page: Int
-  ): [Track]
+  ): [Track!]
+}
+
+"""Root mutation"""
+type Mutation {
+  addRelease(id: String): Release!
 }
 
 """Root Query"""
 type Query {
-  """
-  Returns a single feature switch. Available args are 'project' and 'feature'
-  """
-  feature(feature: String!, project: String!): Feature
-
-  """
-  Returns a list of feature switches. Available args are 'project' and 'feature'
-  """
-  features(feature: String, project: String): [Feature]
-
-  """[DEPRECATED]: A list of services"""
-  services(host: String, language: String, name: String, status: String): [Service] @deprecated(reason: "No longer needed")
-
   """User details"""
   user: User
 }
 
-"""service type"""
-type Service {
-  """Description of the service"""
-  description: String
+"""Release from Discogs"""
+type Release {
+  """A list of the artists"""
+  artists: [ReleaseArtist!]!
 
-  """Host of the service"""
-  host: String
+  """ID for the release"""
+  id: ID!
 
-  """Language the service is written in e.g. Ruby"""
-  language: String
+  """The name of the release"""
+  title: String!
+}
 
-  """Name of the service"""
-  name: String
+"""Artist information given on the release"""
+type ReleaseArtist {
+  """ID for the artist"""
+  id: ID!
 
-  """Status of the service"""
-  status: String
-
-  """URL of the service"""
-  url: String
+  """The name of the artist"""
+  name: String!
 }
 
 """Track information"""

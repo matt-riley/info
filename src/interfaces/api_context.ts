@@ -4,6 +4,7 @@ import { DataSources } from './data_sources';
 
 export interface APIContext extends Context {
   dataSources: DataSources;
-  LastFMApiKey: string;
+  LastFMKey: string;
+  DiscogsKey: string;
   logger: Logger;
 }

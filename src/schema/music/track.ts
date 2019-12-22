@@ -14,7 +14,7 @@ const Track = objectType({
       nullable: true,
       resolve(root: LastFMRecentTrack) {
         return root.mbid;
-      }
+      },
     });
     t.string('url', {
       description: 'The url for the last.fm page for the track',
