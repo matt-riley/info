@@ -14,7 +14,7 @@ const Music = objectType({
       list: [true],
       nullable: true,
       type: Track,
-      resolve(root, args, ctx) {
+      resolve(_root, args, ctx) {
         return ctx.dataSources.lastfmAPI.getRecentTracks({ ...args });
       },
     });
