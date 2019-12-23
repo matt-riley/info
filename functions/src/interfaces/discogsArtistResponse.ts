@@ -20,6 +20,6 @@ export interface DiscogsArtistImage {
   height: number;
   width: number;
   resource_url: string;
-  type: "primary" | "secondary";
+  type: 'primary' | 'secondary';
   uri150: string;
 }
