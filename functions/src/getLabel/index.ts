@@ -1,7 +1,7 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
-import fetch from 'node-fetch';
 import {DiscogsLabelResponse} from '../interfaces/discogsLabelResponse';
+import discogsClient from '../util/discogsClient';
 
 const firestore = admin.firestore();
 
@@ -13,43 +13,33 @@ export const getLabel = functions.firestore
 
     for (const label of data.labels) {
       console.log(label);
-      await fetch(
-        `https://api.discogs.com/labels/${label.id}?key=${
-          functions.config().discogs.key
-        }&secret=${functions.config().discogs.secret}`,
-      )
-        .then(res => {
-          return res.json();
-        })
-        .then(async (json: DiscogsLabelResponse) => {
-          console.log(json);
-          const saveLabelInfo = {
-            description: json.profile ? json.profile : '',
-            name: json.name,
-            contactInfo: json.contact_info ? json.contact_info : '',
-            images: json.images ? json.images : [''],
-            urls: json.urls ? json.urls : [''],
-            sublabels: json.sublabels
-              ? json.sublabels.map(sublabel => {
-                  return {
-                    id: sublabel.id,
-                  };
-                })
-              : [''],
-          };
-          let data;
-          try {
-            data = await firestore.doc(`labels/${label.id}`).set(saveLabelInfo);
-          } catch (err) {
-            console.error(err);
-            throw err;
-          }
-          console.info(data);
-        })
-        .catch(err => {
-          console.error(err);
-          throw err;
-        });
+      const discogsData = await discogsClient<DiscogsLabelResponse>(
+        `labels/${label.id}`,
+      );
+      const saveLabelInfo = {
+        description: discogsData.profile ? discogsData.profile : '',
+        name: discogsData.name.replace(/\(\d+\)$/, '').trim(),
+        contactInfo: discogsData.contact_info ? discogsData.contact_info : '',
+        images: discogsData.images ? discogsData.images : [''],
+        urls: discogsData.urls ? discogsData.urls : [''],
+        sublabels: discogsData.sublabels
+          ? discogsData.sublabels.map(sublabel => {
+              return {
+                id: sublabel.id,
+              };
+            })
+          : [''],
+      };
+
+      let data;
+      try {
+        data = await firestore.doc(`labels/${label.id}`).set(saveLabelInfo);
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
+
+      console.info(data);
     }
     return data;
   });
