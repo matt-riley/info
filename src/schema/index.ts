@@ -1,5 +1,4 @@
 import {
-  intArg,
   makeSchema,
   objectType,
   stringArg,
@@ -15,8 +14,11 @@ const Query = objectType({
   definition(t) {
     t.field('user', {
       description: 'User details',
-      nullable: true,
+      nullable: false,
       type: User,
+      resolve() {
+        return {};
+      },
     });
   },
 });

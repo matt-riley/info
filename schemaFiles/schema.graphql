@@ -23,7 +23,7 @@ type Mutation {
 """Root Query"""
 type Query {
   """User details"""
-  user: User
+  user: User!
 }
 
 """Release from Discogs"""
@@ -62,5 +62,5 @@ type Track {
 """User type - describes the user"""
 type User {
   """Music related information"""
-  music: Music
+  music: Music!
 }

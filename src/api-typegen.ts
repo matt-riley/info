@@ -3,11 +3,7 @@
  * Do not make changes to this file directly
  */
 
-import * as t from "./schema/typeDefs"
-
-
-
-
+import * as t from './schema/typeDefs';
 
 declare global {
   interface NexusGen extends NexusGenTypes {}
@@ -24,21 +20,19 @@ export interface NexusGenRootTypes {
   Mutation: {};
   Query: {};
   Release: { // root type
-    artists: NexusGenRootTypes['ReleaseArtist'][]; // [ReleaseArtist!]!
+    artists: Array<NexusGenRootTypes['ReleaseArtist']>; // [ReleaseArtist!]!
     id: string; // ID!
     title: string; // String!
-  }
+  };
   ReleaseArtist: { // root type
     id: string; // ID!
     name: string; // String!
-  }
+  };
   Track: { // root type
     name?: string | null; // String
     url?: string | null; // String
-  }
-  User: { // root type
-    music?: NexusGenRootTypes['Music'] | null; // Music
-  }
+  };
+  User: {};
   String: string;
   Int: number;
   Float: number;
@@ -51,31 +45,31 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 
 export interface NexusGenFieldTypes {
   Music: { // field return type
-    tracks: NexusGenRootTypes['Track'][] | null; // [Track!]
-  }
+    tracks: Array<NexusGenRootTypes['Track']> | null; // [Track!]
+  };
   Mutation: { // field return type
     addRelease: NexusGenRootTypes['Release']; // Release!
-  }
+  };
   Query: { // field return type
-    user: NexusGenRootTypes['User'] | null; // User
-  }
+    user: NexusGenRootTypes['User']; // User!
+  };
   Release: { // field return type
-    artists: NexusGenRootTypes['ReleaseArtist'][]; // [ReleaseArtist!]!
+    artists: Array<NexusGenRootTypes['ReleaseArtist']>; // [ReleaseArtist!]!
     id: string; // ID!
     title: string; // String!
-  }
+  };
   ReleaseArtist: { // field return type
     id: string; // ID!
     name: string; // String!
-  }
+  };
   Track: { // field return type
     id: string | null; // ID
     name: string | null; // String
     url: string | null; // String
-  }
+  };
   User: { // field return type
-    music: NexusGenRootTypes['Music'] | null; // Music
-  }
+    music: NexusGenRootTypes['Music']; // Music!
+  };
 }
 
 export interface NexusGenArgTypes {
@@ -83,13 +77,13 @@ export interface NexusGenArgTypes {
     tracks: { // args
       limit?: number | null; // Int
       page?: number | null; // Int
-    }
-  }
+    },
+  };
   Mutation: {
     addRelease: { // args
       id?: string | null; // String
-    }
-  }
+    },
+  };
 }
 
 export interface NexusGenAbstractResolveReturnTypes {
@@ -97,7 +91,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Music" | "Mutation" | "Query" | "Release" | "ReleaseArtist" | "Track" | "User";
+export type NexusGenObjectNames = 'Music' | 'Mutation' | 'Query' | 'Release' | 'ReleaseArtist' | 'Track' | 'User';
 
 export type NexusGenInputNames = never;
 
@@ -105,7 +99,7 @@ export type NexusGenEnumNames = never;
 
 export type NexusGenInterfaceNames = never;
 
-export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
+export type NexusGenScalarNames = 'Boolean' | 'Float' | 'ID' | 'Int' | 'String';
 
 export type NexusGenUnionNames = never;
 
@@ -125,11 +119,10 @@ export interface NexusGenTypes {
   unionNames: NexusGenUnionNames;
   allInputTypes: NexusGenTypes['inputNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['scalarNames'];
   allOutputTypes: NexusGenTypes['objectNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['unionNames'] | NexusGenTypes['interfaceNames'] | NexusGenTypes['scalarNames'];
-  allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes']
+  allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes'];
   abstractTypes: NexusGenTypes['interfaceNames'] | NexusGenTypes['unionNames'];
   abstractResolveReturn: NexusGenAbstractResolveReturnTypes;
 }
-
 
 declare global {
   interface NexusGenPluginTypeConfig<TypeName extends string> {
