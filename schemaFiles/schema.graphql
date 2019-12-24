@@ -16,13 +16,14 @@ type Music {
 
 """Root mutation"""
 type Mutation {
+  """Add a release"""
   addRelease(id: String): Release!
 }
 
 """Root Query"""
 type Query {
   """User details"""
-  user: User
+  user: User!
 }
 
 """Release from Discogs"""
@@ -61,5 +62,5 @@ type Track {
 """User type - describes the user"""
 type User {
   """Music related information"""
-  music: Music
+  music: Music!
 }

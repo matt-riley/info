@@ -1,6 +1,7 @@
 import * as Sentry from '@sentry/node';
 import express, { NextFunction } from 'express';
 import helmet from 'helmet';
+import '../utils/dotEnv';
 
 const app = express();
 app.enable('trust proxy');

@@ -7,8 +7,11 @@ const User = objectType({
   definition(t) {
     t.field('music', {
       description: 'Music related information',
-      nullable: true,
+      nullable: false,
       type: Music,
+      resolve() {
+        return {};
+      },
     });
   },
 });

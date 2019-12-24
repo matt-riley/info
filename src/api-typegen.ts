@@ -32,9 +32,7 @@ export interface NexusGenRootTypes {
     name?: string | null; // String
     url?: string | null; // String
   };
-  User: { // root type
-    music?: NexusGenRootTypes['Music'] | null; // Music
-  };
+  User: {};
   String: string;
   Int: number;
   Float: number;
@@ -53,7 +51,7 @@ export interface NexusGenFieldTypes {
     addRelease: NexusGenRootTypes['Release']; // Release!
   };
   Query: { // field return type
-    user: NexusGenRootTypes['User'] | null; // User
+    user: NexusGenRootTypes['User']; // User!
   };
   Release: { // field return type
     artists: Array<NexusGenRootTypes['ReleaseArtist']>; // [ReleaseArtist!]!
@@ -70,7 +68,7 @@ export interface NexusGenFieldTypes {
     url: string | null; // String
   };
   User: { // field return type
-    music: NexusGenRootTypes['Music'] | null; // Music
+    music: NexusGenRootTypes['Music']; // Music!
   };
 }
 

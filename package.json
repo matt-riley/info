@@ -32,7 +32,7 @@
     "@types/graphql": "14.5.0",
     "@types/helmet": "0.0.45",
     "@types/memcached": "2.2.6",
-    "@types/node": "12.12.21",
+    "@types/node": "13.1.0",
     "@types/node-fetch": "2.5.4",
     "commitizen": "4.0.3",
     "cz-conventional-changelog": "3.0.2",
@@ -42,7 +42,7 @@
     "standard-version": "7.0.1",
     "ts-node": "8.5.4",
     "tslint": "5.20.1",
-    "typescript": "3.7.3"
+    "typescript": "3.7.4"
   },
   "engines": {
     "node": ">=10.0.0",
@@ -72,5 +72,5 @@
       "tag": true
     }
   },
-  "version": "2.0.0"
+  "version": "2.1.0"
 }

@@ -9,12 +9,18 @@ export default class LastFMAPI extends RESTDataSource {
 
   public async getRecentTracks({ limit, page }: { limit?: number, page?: number }):
     Promise<LastFMRecentTrack[]> {
-    const data: LastFMRecentTracksRootObject = await this.get('2.0/', {
-      limit,
-      method: 'user.getrecenttracks',
-      page,
-      user: process.env.LASTFM_USER,
-    });
+    let data: LastFMRecentTracksRootObject;
+    try {
+        data = await this.get('2.0/', {
+          limit,
+          method: 'user.getrecenttracks',
+          page,
+          user: process.env.LASTFM_USER,
+        });
+      } catch (error) {
+        this.context.logger.error(error);
+        throw error;
+      }
 
     return data.recenttracks.track;
   }
