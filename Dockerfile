@@ -1,4 +1,4 @@
-FROM node:12.1.0-alpine AS base
+FROM node:13.5.0-alpine AS base
 ENV APP_HOME=/app
 RUN mkdir ${APP_HOME}
 WORKDIR ${APP_HOME}
