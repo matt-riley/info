@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/matt-riley/api.mattriley.info/compare/v2.0.0...v2.1.0) (2019-12-24)
+
+
+### Features
+
+* **cloud run:** moves to Cloud Run instead of AppEngine ([6895426](https://github.com/matt-riley/api.mattriley.info/commit/6895426fd0f0d70f82e953c19a317b3e377a2839)), closes [#373](https://github.com/matt-riley/api.mattriley.info/issues/373)
+
 ## [2.0.0](https://github.com/matt-riley/api.mattriley.info/compare/v1.1.3...v2.0.0) (2019-12-22)
 
 
