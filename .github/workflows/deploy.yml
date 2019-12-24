@@ -29,4 +29,4 @@ jobs:
           PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
           APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
         with:
-          args: run deploy --image gcr.io/$PROJECT_ID/api:$GITHUB_SHA --platform managed
+          args: run deploy api --image gcr.io/$PROJECT_ID/api:$GITHUB_SHA --platform managed
