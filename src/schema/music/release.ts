@@ -13,6 +13,17 @@ const Release = objectType({
       nullable: false,
       type: 'String',
     });
+    t.field('country', {
+      description: 'The country of release',
+      nullable: false,
+      type: 'String',
+    });
+    t.field('genres', {
+      description: 'The genres of music covered by this release',
+      list: [true],
+      nullable: true,
+      type: 'String',
+    });
     t.field('artists', {
       description: 'A list of the artists',
       list: [true],

@@ -12,10 +12,10 @@ const Query = objectType({
   description: 'Root Query',
   name: 'Query',
   definition(t) {
-    t.field('user', {
-      description: 'User details',
+    t.field('music', {
+      description: 'Music related stuff',
       nullable: false,
-      type: User,
+      type: Music,
       resolve() {
         return {};
       },
@@ -33,7 +33,7 @@ const Mutation = objectType({
       },
       description: 'Add a release',
       type: Release,
-      resolve(_root, { id }, ctx) {
+      resolve(root, { id }, ctx) {
         return ctx.dataSources.discogs.addRelease(id);
       },
     });
@@ -54,7 +54,7 @@ const schema = makeSchema({
       },
     ],
   },
-  types: [Track, Music, Query, Release, User, Mutation],
+  types: [Track, Music, Query, Release, Mutation],
 });
 
 export default schema;
