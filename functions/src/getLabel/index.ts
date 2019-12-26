@@ -17,6 +17,7 @@ export const getLabel = functions.firestore
         `labels/${label.id}`,
       );
       const saveLabelInfo = {
+        id: label.id,
         description: discogsData.profile ? discogsData.profile : '',
         name: discogsData.name.replace(/\(\d+\)$/, '').trim(),
         contactInfo: discogsData.contact_info ? discogsData.contact_info : '',

@@ -7,7 +7,6 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "test": "jest",
     "lint": "eslint ./src/**/* --ext .ts,.tsx",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(ts|tsx|json)\"",
     "format": "npm run prettier -- --write",

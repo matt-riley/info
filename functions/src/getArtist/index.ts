@@ -18,6 +18,7 @@ export const getArtist = functions.firestore
       );
 
       const saveArtistInfo = {
+        id: artist.id,
         description: discogsData.profile ? discogsData.profile : '',
         name: discogsData.name.replace(/\(\d+\)$/, '').trim(),
         members: discogsData.members
