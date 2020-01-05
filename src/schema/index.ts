@@ -5,9 +5,8 @@ import {
 } from 'nexus';
 
 import path from 'path';
-// import { NexusGenFieldTypes } from 'src/api-typegen';
+import { NexusGenFieldTypes } from 'src/api-typegen';
 import { Music, Release, Track } from './music/index';
-import { User } from './user';
 
 const Query = objectType({
   description: 'Root Query',
@@ -30,13 +29,16 @@ const Mutation = objectType({
   definition(t) {
     t.field('addRelease', {
       args: {
-        id: stringArg(),
+        id: stringArg({
+          description: 'The Discogs id of the release',
+          required: true,
+        }),
       },
       description: 'Add a release',
       type: Release,
-      // async resolve(root, { id }, ctx): Promise<NexusGenFieldTypes['Release']> {
-      //   return await ctx.dataSources.discogs.addRelease(id) as NexusGenFieldTypes['Release'];
-      // },
+      async resolve(root, { id }, ctx): Promise<NexusGenFieldTypes['Release']> {
+        return await ctx.dataSources.discogs.addRelease(id) as NexusGenFieldTypes['Release'];
+      },
     });
   },
 });

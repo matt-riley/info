@@ -2,6 +2,18 @@
 ### Do not make changes to this file directly
 
 
+"""Information about the artist"""
+type Artist {
+  """Description of the artist"""
+  description: String
+
+  """The artists id"""
+  id: ID!
+
+  """The name of the artist"""
+  name: String!
+}
+
 """Information relating to the user relating to Music"""
 type Music {
   """My music collection"""
@@ -19,17 +31,26 @@ type Music {
 
 """My Music collection"""
 type MusicCollection {
+  """All the artists in the collection"""
+  artists: [Artist!]!
+
   """Information for an individual release"""
   release(
     """The id of the release"""
-    id: ID
+    id: ID!
   ): Release!
+
+  """All the releases (i.e. Albums/12"s) in the collection"""
+  releases: [Release!]!
 }
 
 """Root mutation"""
 type Mutation {
   """Add a release"""
-  addRelease(id: String): Release!
+  addRelease(
+    """The Discogs id of the release"""
+    id: String!
+  ): Release!
 }
 
 """Root Query"""
@@ -41,7 +62,7 @@ type Query {
 """Release from Discogs"""
 type Release {
   """A list of the artists"""
-  artists: [ReleaseArtist!]!
+  artists: [Artist!]!
 
   """The country of release"""
   country: String!
@@ -54,15 +75,6 @@ type Release {
 
   """The name of the release"""
   title: String!
-}
-
-"""Artist information given on the release"""
-type ReleaseArtist {
-  """ID for the artist"""
-  id: ID!
-
-  """The name of the artist"""
-  name: String!
 }
 
 """Track information"""

@@ -64,7 +64,7 @@
     "release": "standard-version",
     "rimraf": "rimraf ./lib",
     "start": "node .",
-    "start:dev": "nodemon --watch src -e ts,graphql --exec ts-node -T ./src/index.ts",
+    "start:dev": "NODE_ENV=development nodemon --watch src -e ts,graphql --exec ts-node -T ./src/index.ts",
     "tsc": "tsc"
   },
   "standard-version": {
