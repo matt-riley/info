@@ -56,6 +56,7 @@ export interface NexusGenFieldTypes {
     recentTracks: Array<NexusGenRootTypes['Track']> | null; // [Track!]
   };
   MusicCollection: { // field return type
+    artist: NexusGenRootTypes['Artist']; // Artist!
     artists: Array<NexusGenRootTypes['Artist']>; // [Artist!]!
     release: NexusGenRootTypes['Release']; // Release!
     releases: Array<NexusGenRootTypes['Release']>; // [Release!]!
@@ -88,6 +89,9 @@ export interface NexusGenArgTypes {
     },
   };
   MusicCollection: {
+    artist: { // args
+      id: string; // ID!
+    }
     release: { // args
       id: string; // ID!
     },

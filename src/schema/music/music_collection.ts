@@ -13,11 +13,26 @@ const MusicCollection = objectType({
       list: [true],
       nullable: false,
       type: Artist,
-      async resolve(root): Promise<Array<NexusGenFieldTypes['Artist']>> {
+      async resolve(): Promise<Array<NexusGenFieldTypes['Artist']>> {
         const res = await admin.firestore().collection(`artists`).get();
         return res.docs.map((doc) => {
           return doc.data() as NexusGenFieldTypes['Artist'];
         });
+      },
+    });
+    t.field('artist', {
+      args: {
+        id: idArg({
+          description: 'The id of the artist',
+          required: true,
+        }),
+      },
+      description: 'Information for an individual artist',
+      nullable: false,
+      type: Artist,
+      async resolve(root, args): Promise<NexusGenFieldTypes['Artist']> {
+        const res = await admin.firestore().doc(`artists/${args.id}`).get();
+        return res.data() as NexusGenFieldTypes['Artist'];
       },
     });
     t.field('releases', {
@@ -25,7 +40,7 @@ const MusicCollection = objectType({
       list: [true],
       nullable: false,
       type: Release,
-      async resolve(root): Promise<Array<NexusGenFieldTypes['Release']>> {
+      async resolve(): Promise<Array<NexusGenFieldTypes['Release']>> {
         const res = await admin.firestore().collection(`releases`).get();
         return res.docs.map((doc) => {
           return doc.data() as NexusGenFieldTypes['Release'];

@@ -31,6 +31,12 @@ type Music {
 
 """My Music collection"""
 type MusicCollection {
+  """Information for an individual artist"""
+  artist(
+    """The id of the artist"""
+    id: ID!
+  ): Artist!
+
   """All the artists in the collection"""
   artists: [Artist!]!
 
