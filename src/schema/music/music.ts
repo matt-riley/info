@@ -21,8 +21,7 @@ const Music = objectType({
     });
     t.field('collection', {
       description: 'My music collection',
-      list: [false],
-      nullable: false,
+      nullable: true,
       type: MusicCollection,
       resolve(root) {
         return root;

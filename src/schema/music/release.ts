@@ -1,4 +1,7 @@
 import { objectType } from 'nexus';
+import { NexusGenRootTypes } from 'src/api-typegen';
+import admin from '../../utils/firebase';
+
 const Release = objectType({
   description: 'Release from Discogs',
   name: 'Release',
@@ -28,6 +31,13 @@ const Release = objectType({
       description: 'A list of the artists',
       list: [true],
       type: ReleaseArtist,
+      async resolve(root) {
+        const result = root.artists.map(async ({ id }) => {
+          const res = await admin.firestore().doc(`artists/${id}`).get();
+          return res.data() as NexusGenRootTypes['ReleaseArtist'];
+        });
+        return result;
+      },
     });
   },
 });

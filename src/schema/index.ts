@@ -5,6 +5,7 @@ import {
 } from 'nexus';
 
 import path from 'path';
+// import { NexusGenFieldTypes } from 'src/api-typegen';
 import { Music, Release, Track } from './music/index';
 import { User } from './user';
 
@@ -33,9 +34,9 @@ const Mutation = objectType({
       },
       description: 'Add a release',
       type: Release,
-      resolve(root, { id }, ctx) {
-        return ctx.dataSources.discogs.addRelease(id);
-      },
+      // async resolve(root, { id }, ctx): Promise<NexusGenFieldTypes['Release']> {
+      //   return await ctx.dataSources.discogs.addRelease(id) as NexusGenFieldTypes['Release'];
+      // },
     });
   },
 });
@@ -45,6 +46,7 @@ const schema = makeSchema({
     schema: path.join(__dirname, '../../schemaFiles/schema.graphql'),
     typegen: path.join(__dirname.replace(/\/lib$/, '/src'), '../api-typegen.ts'),
   },
+  shouldGenerateArtifacts: process.env.NODE_ENV === 'development',
   typegenAutoConfig: {
     contextType: 't.Context',
     sources: [
