@@ -8,7 +8,7 @@
   "dependencies": {
     "@google-cloud/debug-agent": "4.2.1",
     "@google-cloud/logging-winston": "3.0.3",
-    "@google-cloud/profiler": "3.0.1",
+    "@google-cloud/profiler": "3.0.0",
     "@google-cloud/storage": "4.2.0",
     "@google-cloud/trace-agent": "4.2.4",
     "@sentry/node": "5.10.2",
@@ -64,7 +64,7 @@
     "release": "standard-version",
     "rimraf": "rimraf ./lib",
     "start": "node .",
-    "start:dev": "nodemon --watch src -e ts,graphql --exec ts-node -T ./src/index.ts",
+    "start:dev": "NODE_ENV=development nodemon --watch src -e ts,graphql --exec ts-node -T ./src/index.ts",
     "tsc": "tsc"
   },
   "standard-version": {
@@ -72,5 +72,5 @@
       "tag": true
     }
   },
-  "version": "2.1.1"
+  "version": "2.2.0"
 }

@@ -1,4 +1,4 @@
-FROM node:13.5.0-alpine AS base
+FROM node:12.14.0-alpine AS base
 ENV APP_HOME=/app
 RUN mkdir ${APP_HOME}
 WORKDIR ${APP_HOME}
@@ -17,4 +17,3 @@ COPY --from=dependencies ${APP_HOME}/node_modules ${APP_HOME}/node_modules
 COPY --from=build ${APP_HOME}/lib ${APP_HOME}/lib
 EXPOSE 8080
 CMD ["npm", "start"]
-

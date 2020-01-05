@@ -2,10 +2,37 @@
 ### Do not make changes to this file directly
 
 
+"""Information about the artist"""
+type Artist {
+  """Description of the artist"""
+  description: String
+
+  """The artists id"""
+  id: ID!
+
+  """The name of the artist"""
+  name: String!
+}
+
+"""Information about the label"""
+type Label {
+  """Description of the label"""
+  description: String
+
+  """The label id"""
+  id: ID!
+
+  """The name of the label"""
+  name: String!
+}
+
 """Information relating to the user relating to Music"""
 type Music {
-  """A list of the users recently played tracks"""
-  tracks(
+  """My music collection"""
+  collection: MusicCollection
+
+  """A list of my recently played tracks"""
+  recentTracks(
     """Limit the amount of recently played tracks to return"""
     limit: Int
 
@@ -14,37 +41,67 @@ type Music {
   ): [Track!]
 }
 
+"""My Music collection"""
+type MusicCollection {
+  """Information for an individual artist"""
+  artist(
+    """The id of the artist"""
+    id: ID!
+  ): Artist!
+
+  """All the artists in the collection"""
+  artists: [Artist!]!
+
+  """Information for an individual label"""
+  label(
+    """The id of the label"""
+    id: ID!
+  ): Label!
+
+  """All the labels in the collection"""
+  labels: [Label!]!
+
+  """Information for an individual release"""
+  release(
+    """The id of the release"""
+    id: ID!
+  ): Release!
+
+  """All the releases (i.e. Albums/12"s) in the collection"""
+  releases: [Release!]!
+}
+
 """Root mutation"""
 type Mutation {
   """Add a release"""
-  addRelease(id: String): Release!
+  addRelease(
+    """The Discogs id of the release"""
+    id: String!
+  ): Release!
 }
 
 """Root Query"""
 type Query {
-  """User details"""
-  user: User!
+  """Music related stuff"""
+  music: Music!
 }
 
 """Release from Discogs"""
 type Release {
   """A list of the artists"""
-  artists: [ReleaseArtist!]!
+  artists: [Artist!]!
+
+  """The country of release"""
+  country: String!
+
+  """The genres of music covered by this release"""
+  genres: [String!]
 
   """ID for the release"""
   id: ID!
 
   """The name of the release"""
   title: String!
-}
-
-"""Artist information given on the release"""
-type ReleaseArtist {
-  """ID for the artist"""
-  id: ID!
-
-  """The name of the artist"""
-  name: String!
 }
 
 """Track information"""
@@ -57,10 +114,4 @@ type Track {
 
   """The url for the last.fm page for the track"""
   url: String
-}
-
-"""User type - describes the user"""
-type User {
-  """Music related information"""
-  music: Music!
 }
