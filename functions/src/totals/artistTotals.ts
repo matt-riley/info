@@ -8,8 +8,8 @@ export const artistTotals = functions.firestore
   .onCreate(async event => {
     const currentData = await firestore.doc(`totals/artists`).get();
     const data = currentData.data();
-    const currentTotal = data !== undefined ? (data.total += 1) : 1;
-    firestore.doc(`totals/artists`).update({
-      total: currentTotal,
+    const newTotal = data !== undefined ? data.total + 1 : 1;
+    firestore.doc(`totals/artists`).set({
+      total: newTotal,
     });
   });
