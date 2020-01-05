@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/matt-riley/api.mattriley.info/compare/v2.1.0...v2.2.0) (2020-01-05)
+
+
+### Features
+
+* **mc: artist:** displays single artist when provided an id ([fb12aeb](https://github.com/matt-riley/api.mattriley.info/commit/fb12aeb4d47084ad47cf600f2953e25685777cbc)), closes [#380](https://github.com/matt-riley/api.mattriley.info/issues/380)
+* **mc: artists:** lists all artists in the collection ([0166fad](https://github.com/matt-riley/api.mattriley.info/commit/0166fadc008ade15d8245b01561ff845e0abe40a)), closes [#380](https://github.com/matt-riley/api.mattriley.info/issues/380)
+* **mc: labels:** returns the labels in the collection ([5a0d768](https://github.com/matt-riley/api.mattriley.info/commit/5a0d76866a0b28e9e5fad8178ffced624953fc95)), closes [#380](https://github.com/matt-riley/api.mattriley.info/issues/380)
+* **mc: release:** returns single release ([3654834](https://github.com/matt-riley/api.mattriley.info/commit/3654834e4ac44ec7b397ca4392f27699879b5ba4)), closes [#380](https://github.com/matt-riley/api.mattriley.info/issues/380)
+* **mc: releases:** lists all releases ([f957301](https://github.com/matt-riley/api.mattriley.info/commit/f957301f95dc0666d6904d108c78c2277a0bef7f)), closes [#380](https://github.com/matt-riley/api.mattriley.info/issues/380)
+
 ### [2.1.1](https://github.com/matt-riley/api.mattriley.info/compare/v2.1.0...v2.1.1) (2020-01-05)
 
 ## [2.1.0](https://github.com/matt-riley/api.mattriley.info/compare/v2.0.0...v2.1.0) (2019-12-24)
