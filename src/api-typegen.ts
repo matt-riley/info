@@ -21,6 +21,11 @@ export interface NexusGenRootTypes {
     id: string; // ID!
     name: string; // String!
   };
+  Label: { // root type
+    description?: string | null; // String
+    id: string; // ID!
+    name: string; // String!
+  };
   Music: {};
   MusicCollection: {};
   Mutation: {};
@@ -51,6 +56,11 @@ export interface NexusGenFieldTypes {
     id: string; // ID!
     name: string; // String!
   };
+  Label: { // field return type
+    description: string | null; // String
+    id: string; // ID!
+    name: string; // String!
+  };
   Music: { // field return type
     collection: NexusGenRootTypes['MusicCollection'] | null; // MusicCollection
     recentTracks: Array<NexusGenRootTypes['Track']> | null; // [Track!]
@@ -58,6 +68,8 @@ export interface NexusGenFieldTypes {
   MusicCollection: { // field return type
     artist: NexusGenRootTypes['Artist']; // Artist!
     artists: Array<NexusGenRootTypes['Artist']>; // [Artist!]!
+    label: NexusGenRootTypes['Label']; // Label!
+    labels: Array<NexusGenRootTypes['Label']>; // [Label!]!
     release: NexusGenRootTypes['Release']; // Release!
     releases: Array<NexusGenRootTypes['Release']>; // [Release!]!
   };
@@ -92,6 +104,9 @@ export interface NexusGenArgTypes {
     artist: { // args
       id: string; // ID!
     }
+    label: { // args
+      id: string; // ID!
+    }
     release: { // args
       id: string; // ID!
     },
@@ -108,7 +123,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = 'Artist' | 'Music' | 'MusicCollection' | 'Mutation' | 'Query' | 'Release' | 'Track';
+export type NexusGenObjectNames = 'Artist' | 'Label' | 'Music' | 'MusicCollection' | 'Mutation' | 'Query' | 'Release' | 'Track';
 
 export type NexusGenInputNames = never;
 

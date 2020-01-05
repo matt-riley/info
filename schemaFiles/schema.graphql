@@ -14,6 +14,18 @@ type Artist {
   name: String!
 }
 
+"""Information about the label"""
+type Label {
+  """Description of the label"""
+  description: String
+
+  """The label id"""
+  id: ID!
+
+  """The name of the label"""
+  name: String!
+}
+
 """Information relating to the user relating to Music"""
 type Music {
   """My music collection"""
@@ -39,6 +51,15 @@ type MusicCollection {
 
   """All the artists in the collection"""
   artists: [Artist!]!
+
+  """Information for an individual label"""
+  label(
+    """The id of the label"""
+    id: ID!
+  ): Label!
+
+  """All the labels in the collection"""
+  labels: [Label!]!
 
   """Information for an individual release"""
   release(
