@@ -19,6 +19,7 @@ export default class DiscogsAPI extends RESTDataSource {
       country: discogsData.country,
       format: discogsData.formats,
       genres: discogsData.genres,
+      id,
       images: discogsData.images,
       labels: discogsData.labels,
       styles: (discogsData.styles) ? discogsData.styles : [''],
