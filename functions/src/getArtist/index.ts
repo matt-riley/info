@@ -12,7 +12,20 @@ export const getArtist = functions.firestore
     if (!data) return false;
 
     for (const artist of data.artists) {
-      console.log(artist);
+      const currentArtistRecord = await firestore.doc(`artists/${artist.id}`).get();
+      const currentData = currentArtistRecord.data()
+      if(currentData) {
+        const existingReleases = currentData.releases || [];
+        const existingGenres: string[] = currentData.genres || [];
+        const newGenres = data.genres.filter((genre: string) => !existingGenres.includes(genre))
+
+        firestore.doc(`artists/${artist.id}`).update({
+          releases: [...existingReleases, data.id],
+          genres: existingGenres.concat(newGenres),
+        });
+        continue;
+      }
+
       const discogsData = await discogsClient<DiscogsArtistResponse>(
         `artists/${artist.id}`,
       );
@@ -30,17 +43,19 @@ export const getArtist = functions.firestore
           : [''],
         urls: discogsData.urls ? discogsData.urls : [''],
         images: discogsData.images ? discogsData.images : [''],
+        genres: data.genres,
+        releases: [data.id]
       };
 
-      let data;
+      let writeData;
       try {
-        data = await firestore.doc(`artists/${artist.id}`).set(saveArtistInfo);
+        writeData = await firestore.doc(`artists/${artist.id}`).set(saveArtistInfo);
       } catch (err) {
         console.error(err);
         throw err;
       }
-
-      console.log(data);
+      console.log(writeData);
+      continue;
     }
     return data;
   });
