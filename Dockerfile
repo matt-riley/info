@@ -5,11 +5,13 @@ WORKDIR ${APP_HOME}
 COPY package*.json ${APP_HOME}/
 
 FROM base AS dependencies
+RUN apk add --no-cache python make g++
 RUN npm ci --only=production
 
 FROM base AS build
 COPY src ${APP_HOME}/src
 COPY tsconfig.json tslint.json ${APP_HOME}/
+RUN apk add --no-cache python make g++
 RUN npm ci && npm run build
 
 FROM base AS release
