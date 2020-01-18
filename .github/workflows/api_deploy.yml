@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - api/**  
+name: Deploy
+jobs:
+  deploy:
+    name: Deploy to Cloud Run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: docker://google/cloud-sdk:latest
+      - name: SET CONFIG!
+        run: gcloud config set run/region europe-west1 && gcloud config set project ${{ secrets.GCLOUD_PROJECT_ID }}
+      - name: SET CREDS!
+        run: echo ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} | base64 -d > /tmp/account.json && gcloud auth activate-service-account --key-file=/tmp/account.json
+      - name: BUILD!
+        run: gcloud builds submit --tag gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/api:$GITHUB_SHA
+        working-directory: ./api
+      - name: RUN, RUN, RUN AWAY!
+        run: gcloud run deploy api --image gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/api:$GITHUB_SHA --platform managed
+        working-directory: ./api
