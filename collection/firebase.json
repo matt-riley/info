@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "public": "public",
+    "rewrites": [ {
+      "source": "/collection",
+      "run": {
+        "serviceId": "music-collection",
+        "region": "europe-west1"
+      }
+    }]
+  }
+}
