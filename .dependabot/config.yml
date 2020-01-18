@@ -1,0 +1,32 @@
+version: 1
+update_configs:
+  - package_manager: "javascript"
+    directory: "/"
+    update_schedule: "weekly"
+    commit_message:
+      prefix: "chore"
+      include_scope: true
+  - package_manager: "javascript"
+    directory: "/api"
+    update_schedule: "weekly"
+    commit_message:
+      prefix: "chore"
+      include_scope: true
+  - package_manager: "javascript"
+    directory: "/cloud-functions/functions"
+    update_schedule: "weekly"
+    commit_message:
+      prefix: "chore"
+      include_scope: true
+  - package_manager: "javascript"
+    directory: "/collection"
+    update_schedule: "weekly"
+    commit_message:
+      prefix: "chore"
+      include_scope: true
+  - package_manager: "javascript"
+    directory: "/home"
+    update_schedule: "weekly"
+    commit_message:
+      prefix: "chore"
+      include_scope: true

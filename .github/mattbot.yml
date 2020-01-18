@@ -3,7 +3,7 @@ ignoreUser:
 isGraphQL: true
 schemaCheck:
   paths:
-    - path: schemaFiles/schema.graphql
+    - path: api/schemaFiles/schema.graphql
       mainBranch: master
   rules:
     - FIELD_CHANGED_KIND
