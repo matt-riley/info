@@ -1,34 +1,37 @@
 {
   "name": "mattriley.info",
-  "version": "0.0.1",
-  "description": "",
-  "main": "lib/",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gcloud beta app deploy",
-    "build": "tsc",
-    "prestart": "npm run build",
-    "start": "node .",
-    "start:dev": "ts-node index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matt-riley/mattriley.info.git"
-  },
-  "author": "Matt Riley <matt@mattriley.me> (https://mattriley.io)",
+  "description": "something, something, dangerzone",
+  "version": "1.0.0",
+  "main": "dist/server/index.js",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/matt-riley/mattriley.info/issues"
+  "scripts": {
+    "setup": "firebase use --add",
+    "build:client": "next build src/client",
+    "build:server": "babel src/server --out-dir dist/server --source-maps",
+    "build": "npm run build:client && npm run build:server",
+    "watch:client": "next src/client",
+    "watch:server": "babel src/server --out-dir dist/server --source-maps --watch",
+    "watch": "npm run watch:client & npm run watch:server",
+    "serve": "NODE_ENV=production firebase serve --only functions,hosting",
+    "predeploy": "rimraf dist/ && npm run build",
+    "deploy": "NODE_ENV=production firebase deploy --only functions,hosting"
   },
-  "homepage": "https://github.com/matt-riley/mattriley.info#readme",
-  "devDependencies": {
-    "@types/express": "4.17.2",
-    "ts-node": "8.6.2",
-    "tslint": "5.20.1",
-    "typescript": "3.7.4"
+  "engines": {
+    "node": "10"
   },
   "dependencies": {
-    "express": "4.17.1"
+    "firebase-admin": "^8.3.0",
+    "firebase-functions": "^3.2.0",
+    "next": "^9.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "firebase-functions-test": "^0.1.6",
+    "firebase-tools": "^7.2.1",
+    "rimraf": "^2.6.3"
   }
 }
