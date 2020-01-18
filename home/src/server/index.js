@@ -19,8 +19,8 @@ const server = functions.https.onRequest((request, response) => {
   return app.prepare().then(() => handle(request, response));
 });
 
-const nextjs = {
+const indexNextjs = {
   server,
 };
 
-export { nextjs };
+export { indexNextjs };

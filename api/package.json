@@ -49,8 +49,8 @@
   "keywords": [],
   "license": "MIT",
   "main": "lib/index.js",
-  "name": "api.mattriley.info",
-  "repository": "https://github.com/matt-riley/api.mattriley.info",
+  "name": "api",
+  "repository": "https://github.com/matt-riley/info",
   "scripts": {
     "build": "run-p tsc",
     "commit": "npx git-cz",

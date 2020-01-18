@@ -19,6 +19,6 @@
     "api",
     "cloud-functions/functions",
     "collection",
-    "index"
+    "home"
   ]
 }

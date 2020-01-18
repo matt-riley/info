@@ -1,5 +1,5 @@
 {
-  "name": "mattriley.info",
+  "name": "home",
   "description": "something, something, dangerzone",
   "version": "1.0.0",
   "main": "dist/server/index.js",
@@ -14,7 +14,7 @@
     "watch": "npm run watch:client & npm run watch:server",
     "serve": "NODE_ENV=production firebase serve --only functions,hosting",
     "predeploy": "rimraf dist/ && npm run build",
-    "deploy": "NODE_ENV=production firebase deploy --only functions,hosting"
+    "deploy": "NODE_ENV=production firebase deploy --only hosting,functions:indexNextjs"
   },
   "engines": {
     "node": "10"
