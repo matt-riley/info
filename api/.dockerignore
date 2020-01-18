@@ -1,0 +1,12 @@
+node_modules/
+lib/
+.github/
+schemaFiles/
+CHANGELOG.md
+Readme
+app.yaml
+lefthook.yml
+service-account.json
+.tool-versions
+.git/
+Dockerfile

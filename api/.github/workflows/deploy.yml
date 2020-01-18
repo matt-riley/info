@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+      - master
+name: Deploy
+jobs:
+  deploy:
+    name: Deploy to Cloud Run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: SET CONFIG!
+        uses: actions-hub/gcloud@272.0.0
+        env:
+          PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
+          APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        with:
+          args: config set run/region europe-west1
+      - name: BUILD!
+        uses: actions-hub/gcloud@272.0.0
+        env:
+          PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
+          APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        with:
+          args: builds submit --tag gcr.io/$PROJECT_ID/api:$GITHUB_SHA
+      - name: RUN, RUN, RUN AWAY!
+        uses: actions-hub/gcloud@272.0.0
+        env:
+          PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
+          APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        with:
+          args: run deploy api --image gcr.io/$PROJECT_ID/api:$GITHUB_SHA --platform managed
