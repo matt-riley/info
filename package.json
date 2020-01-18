@@ -1,0 +1,24 @@
+{
+  "name": "info",
+  "version": "1.0.0",
+  "description": "Monorepo for mattriley.info",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-riley/info.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matt-riley/info/issues"
+  },
+  "homepage": "https://github.com/matt-riley/info#readme",
+  "workspaces": [
+    "api",
+    "cloud-functions/functions",
+    "collection",
+    "index"
+  ]
+}

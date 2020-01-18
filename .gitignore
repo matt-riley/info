@@ -1,0 +1,10 @@
+node_modules/
+build/
+*.log
+.env
+.env.*
+*.rdb
+.DS_Store
+lib/
+service-account.json
+env_variables.yaml
