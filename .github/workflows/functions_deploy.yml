@@ -2,7 +2,9 @@ on:
   push:
     branches:
       - master
-name: release to firebase
+    paths:
+      - cloud-functions/**  
+name: Deploy Cloud Functions to Firebase
 jobs:
   deploy:
     name: Deploy to Firebase
@@ -14,13 +16,15 @@ jobs:
         uses: actions/cache@v1
         with:
           path: functions/node_modules
-          key: ${{ runner.os }}-node${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node${{ hashFiles('**/yarn.lock') }}
       - name: Install Deps if no cache
         if: steps.npm-cache.outputs.cache-hit != true
-        run: cd functions && npm ci
+        run: npm i
+        working-directory: ./cloud-functions/functions
       - name: To firebase and beyond!
         uses: w9jds/firebase-action@v1.1.0
         with:
           args: deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_PATH: ./cloud-functions

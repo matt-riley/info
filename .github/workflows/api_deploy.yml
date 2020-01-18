@@ -4,7 +4,7 @@ on:
       - master
     paths:
       - api/**  
-name: Deploy
+name: Deploy API
 jobs:
   deploy:
     name: Deploy to Cloud Run
