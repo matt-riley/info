@@ -1,7 +1,12 @@
 {
   "hosting": {
+    "site": "mattriley-info",
     "public": "public",
     "rewrites": [
+      {
+        "source": "/blog{,/**}",
+        "destination": "/blog"
+      },
       {
         "source": "**/**",
         "function": "indexNextjs-server"
