@@ -2,9 +2,15 @@
 {{ define "main" }}
     <div id="posts">
       {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-			{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-			{{ range $paginator.Pages }}
-          <h1>{{ .Title }}</h1>
+			{{ range first 5 $pages }}
+        <div id="card">
+          <div id="card-date">
+            <h2><time>{{ .Date.Format "02/01/2006" }}</time></h2>
+          </div>
+          <div id="card-title">
+            <h1><a href={{ .Permalink }}>{{ .Title }}</a></h1>
+          </div>
+        </div>
       {{ end }}
     </div>
 

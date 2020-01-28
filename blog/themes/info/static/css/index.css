@@ -47,9 +47,14 @@ body {
   padding: 0.6em;
   box-shadow: 4px 4px 18px -1px #212121;
 }
+
+#card-date h2 {
+  font-size: 1.6em;
+}
+
 #card-title {
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 5;
   grid-column-start: 2;
   grid-column-end: 6;
   background-color: #fdfdfd;
@@ -57,4 +62,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#card-title h1 {
+  text-transform: uppercase;
+  font-size: 1.6em;
+}
+
+#card-title a {
+  color: #212121;
+  text-decoration: none;
+  padding: .4em;
+  transition: all .4s ease-in;
+}
+
+#card-title a:hover {
+  background-color: #212121;
+  color: #fdfdfd;
 }
