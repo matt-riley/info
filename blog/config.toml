@@ -1,8 +1,11 @@
 baseURL = "https://mattriley.info/blog/"
 languageCode = "en-gb"
-title = "Matt Riley Info - Blog"
+title = "Matt Riley - Blog"
 publishDir = "../home/public/blog"
 theme = "info"
+
+[permalinks]
+  posts = "/:filename/"
 
 [Author]
   name = "Matt"

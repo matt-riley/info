@@ -1,3 +1,11 @@
+
 {{ define "main" }}
-  <h1>Hello World!</h1>
+    <div id="posts">
+      {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+			{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
+			{{ range $paginator.Pages }}
+          <h1>{{ .Title }}</h1>
+      {{ end }}
+    </div>
+
 {{ end }}
