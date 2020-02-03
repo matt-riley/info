@@ -25,7 +25,7 @@
   },
   "description": "Matt Riley Info API",
   "devDependencies": {
-    "@arkweid/lefthook": "0.7.0",
+    "@arkweid/lefthook": "0.7.1",
     "@types/express": "4.17.2",
     "@types/express-enforces-ssl": "1.1.1",
     "@types/helmet": "0.0.45",
