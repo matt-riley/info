@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/node';
+import LogRocket from 'logrocket';
 import express, { NextFunction, Request } from 'express';
 import helmet from 'helmet';
 import '../utils/dotEnv';
@@ -9,10 +10,16 @@ Sentry.init({
   dsn: process.env.SENTRY_KEY
 })
 
+LogRocket.init(process.env.LOGROCKET)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(Sentry.Handlers.requestHandler());
 
+  LogRocket.getSessionURL(sessionURL => {
+    Sentry.configureScope(scope => {
+      scope.setExtra("sessionURL", sessionURL);
+    });
+  });
   app.use(helmet.hsts({
     maxAge: 31536000,
     preload: true,
