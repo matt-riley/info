@@ -5,11 +5,6 @@ if (process.env.NODE_ENV === 'production') {
 
 import './utils/dotEnv';
 
-import * as profiler from '@google-cloud/profiler';
-if (process.env.NODE_ENV === 'production') {
-  profiler.start();
-}
-
 import apollo from './server/apollo';
 import app from './server/app';
 import logger from './utils/logger';
