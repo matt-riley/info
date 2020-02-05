@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div id="posts">    
+  {{ range .Pages.ByPublishDate.Reverse }}
+    <div id="card">
+      <div id="card-date">
+        <time>{{ .Date.Format "02/01/2006" }}</time>
+      </div>
+      <div id="card-title">
+        <h1><a href={{ .Permalink }}>{{ .Title }}</a></h1>
+      </div>
+    </div>
+  {{ end }}
+</div>
+{{ end }}
