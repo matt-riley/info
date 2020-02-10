@@ -32,6 +32,6 @@
     "@babel/preset-env": "7.8.4",
     "firebase-functions-test": "0.1.7",
     "firebase-tools": "7.12.1",
-    "rimraf": "3.0.1"
+    "rimraf": "3.0.2"
   }
 }
