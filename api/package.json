@@ -21,7 +21,7 @@
     "graphql": "14.6.0",
     "helmet": "3.21.2",
     "logrocket": "1.0.6",
-    "nexus": "0.12.0-rc.9",
+    "nexus": "0.12.0-rc.11",
     "winston": "3.2.1"
   },
   "description": "Matt Riley Info API",
