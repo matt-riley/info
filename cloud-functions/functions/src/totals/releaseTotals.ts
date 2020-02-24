@@ -17,26 +17,42 @@ export const releaseTotals = functions.firestore
     if (!data) return false;
     const totalDoc = await firestore.doc(`totals/releases`).get();
     const totalData = totalDoc.data();
-    const existingTotals = (totalData === undefined) ? {total: 0, formats: {}, genres: {}} : totalData; 
-    let newData: ReleaseTotals = {};
+    const existingTotals =
+      totalData === undefined ? {total: 0, formats: {}, genres: {}} : totalData;
+    const newData: ReleaseTotals = {};
 
-    const newFormats = data.format.reduce((prev:{[key: string]: number}, curr) => {
-      if(curr.name !== 'All Media') prev[curr.name] = (existingTotals?.formats[curr.name]) ? existingTotals.formats[curr.name] + 1 : 1;
-      prev[curr.descriptions[0]] = (existingTotals?.formats[curr.descriptions[0]]) ? existingTotals.formats[curr.descriptions[0]] + 1 : 1;
-      return prev;
-    }, {})
-    const newGenres = data.genres.reduce((prev:{[key: string]: number}, curr) => {
-      prev[curr] = (existingTotals?.genres[curr]) ? existingTotals.genres[curr] + 1 : 1;
-      return prev
-    }, {})
+    const newFormats = data.format.reduce(
+      (prev: {[key: string]: number}, curr) => {
+        if (curr.name !== 'All Media')
+          prev[curr.name] = existingTotals?.formats[curr.name]
+            ? existingTotals.formats[curr.name] + 1
+            : 1;
+        prev[curr.descriptions[0]] = existingTotals?.formats[
+          curr.descriptions[0]
+        ]
+          ? existingTotals.formats[curr.descriptions[0]] + 1
+          : 1;
+        return prev;
+      },
+      {},
+    );
+    const newGenres = data.genres.reduce(
+      (prev: {[key: string]: number}, curr) => {
+        prev[curr] = existingTotals?.genres[curr]
+          ? existingTotals.genres[curr] + 1
+          : 1;
+        return prev;
+      },
+      {},
+    );
 
     newData.formats = {
       ...existingTotals.formats,
-      ...newFormats
+      ...newFormats,
     };
     newData.genres = {
       ...existingTotals.genres,
-      ...newGenres
+      ...newGenres,
     };
     newData.total = existingTotals.total + 1;
     firestore.doc(`totals/releases`).set(newData);
