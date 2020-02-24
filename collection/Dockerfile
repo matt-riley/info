@@ -6,7 +6,7 @@ COPY package*.json ${APP_HOME}/
 
 FROM base AS dependencies
 RUN apk add --no-cache python make g++
-RUN npm ci --only=production
+RUN npm i --only=production
 
 FROM base AS build
 COPY components ${APP_HOME}/components
@@ -15,7 +15,7 @@ COPY pages ${APP_HOME}/pages
 COPY public ${APP_HOME}/public
 COPY tsconfig.json ${APP_HOME}/
 RUN apk add --no-cache python make g++
-RUN npm ci && npm run build
+RUN npm i && npm run build
 
 FROM base AS release
 ENV NODE_ENV=production
