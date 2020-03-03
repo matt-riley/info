@@ -32,7 +32,7 @@
     "@types/helmet": "0.0.45",
     "@types/memcached": "2.2.6",
     "@types/node": "13.7.4",
-    "@types/node-fetch": "2.5.4",
+    "@types/node-fetch": "2.5.5",
     "commitizen": "4.0.3",
     "cz-conventional-changelog": "3.1.0",
     "nodemon": "2.0.2",
