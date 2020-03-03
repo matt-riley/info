@@ -1,14 +1,21 @@
 import React from "react";
-import Link from "next/link";
+import NextLink from "next/link";
+import {Flex, Box, Link, Text} from "rebass";
 
 export default ({ pathname }) => (
   <header>
-    <Link href="/">
-      <a className={pathname === "/" ? "is-active" : ""}>Home</a>
-    </Link>{" "}
-    <Link href="/about">
-      <a className={pathname === "/about" ? "is-active" : ""}>About</a>
-    </Link>
-    <a href="/blog">Blog</a>
+    <Flex
+      px={2}
+      bg='muted'
+      alignItems='center'
+      color='secondary'
+    >
+      <Text p={2} fontWeight="bold">Matt Riley</Text>
+      <Box mx="auto" />
+      <Link variant="nav" href="/">Home</Link>{" "}
+      <Link variant="nav" href="/about">About</Link>{" "}
+      <Link variant="nav" href="/uses">Uses</Link>{" "}
+      <Link variant="nav" href="/blog">Blog</Link>
+    </Flex>
   </header>
 );

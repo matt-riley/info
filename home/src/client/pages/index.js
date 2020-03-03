@@ -1,8 +1,8 @@
 import React from "react";
-import App from "../components/App";
+import { Text } from "rebass";
 
 export default () => (
-  <App>
-    <p>Next.js Index Page</p>
-  </App>
+  <React.Fragment>
+    <Text color="black" p={2} fontWeight="bold">Hi</Text>
+  </React.Fragment>
 );
