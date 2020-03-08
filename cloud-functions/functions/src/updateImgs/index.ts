@@ -16,7 +16,6 @@ export const updateImgs = functions.storage.object().onFinalize(async event => {
    */
   const link = event.selfLink;
   const filePathSplit = filePath?.split('/');
-  console.log('HERE COME THE GIRLS');
   console.log(filePathSplit);
   console.log(link);
   return true;
