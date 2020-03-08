@@ -21,8 +21,9 @@ export const updateImgs = functions.storage
     const link = event.selfLink;
     const filePathSplit: string[] = filePath?.split('/') as string[];
     const type = filePathSplit[1];
-    console.log(type);
+    console.log('HERE COME THE GIRLS');
     console.log(filePathSplit);
     console.log(link);
+    console.log(type);
     return true;
   });
