@@ -12,12 +12,16 @@ export const getArtist = functions.firestore
     if (!data) return false;
 
     for (const artist of data.artists) {
-      const currentArtistRecord = await firestore.doc(`artists/${artist.id}`).get();
-      const currentData = currentArtistRecord.data()
-      if(currentData) {
+      const currentArtistRecord = await firestore
+        .doc(`artists/${artist.id}`)
+        .get();
+      const currentData = currentArtistRecord.data();
+      if (currentData) {
         const existingReleases = currentData.releases || [];
         const existingGenres: string[] = currentData.genres || [];
-        const newGenres = data.genres.filter((genre: string) => !existingGenres.includes(genre))
+        const newGenres = data.genres.filter(
+          (genre: string) => !existingGenres.includes(genre),
+        );
 
         firestore.doc(`artists/${artist.id}`).update({
           releases: [...existingReleases, data.id],
@@ -44,12 +48,14 @@ export const getArtist = functions.firestore
         urls: discogsData.urls ? discogsData.urls : [''],
         images: discogsData.images ? discogsData.images : [''],
         genres: data.genres,
-        releases: [data.id]
+        releases: [data.id],
       };
 
       let writeData;
       try {
-        writeData = await firestore.doc(`artists/${artist.id}`).set(saveArtistInfo);
+        writeData = await firestore
+          .doc(`artists/${artist.id}`)
+          .set(saveArtistInfo);
       } catch (err) {
         console.error(err);
         throw err;
