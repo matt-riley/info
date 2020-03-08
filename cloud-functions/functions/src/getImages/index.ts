@@ -11,17 +11,19 @@ import {CollectionLabelData} from '../interfaces/CollectionLabelData';
 import {CollectionReleaseData} from '../interfaces/CollectionReleaseData';
 
 const storage = new Storage();
-const TMP_BUCKET: string | undefined = process.env.TMP_BUCKET;
+const BUCKET: string = functions.config().img.prod;
 
 export const saveImgToTempDir = async (
   type: 'ARTIST' | 'RELEASE' | 'LABEL',
   fileUrl: string,
   id: string | number,
+  index: number,
 ): Promise<UploadResponse> => {
   const parsedUrl = url.parse(fileUrl);
   const fileName = path.basename(parsedUrl.pathname as string);
   const tmpPath = path.join(os.tmpdir(), type.toLowerCase(), fileName);
   const writer = fs.createWriteStream(tmpPath);
+  const extension = path.extname(fileName);
   const imgDL = await axios({
     url: fileUrl,
     method: 'GET',
@@ -34,12 +36,10 @@ export const saveImgToTempDir = async (
     writer.on('error', reject);
   });
 
-  const uploadFilePath = await storage
-    .bucket(TMP_BUCKET as string)
-    .upload(tmpPath, {
-      gzip: false,
-      destination: `images/${type.toLowerCase()}/${id}/${fileName}`,
-    });
+  const uploadFilePath = await storage.bucket(BUCKET).upload(tmpPath, {
+    gzip: false,
+    destination: `images/${type.toLowerCase()}/${id}/${index}/${index}${extension}`,
+  });
   return uploadFilePath;
 };
 
@@ -52,9 +52,9 @@ export async function getImgs(
     | CollectionLabelData
     | CollectionReleaseData;
   if (!data) return false;
-  for (const img of data.images) {
+  for (const [idx, img] of data.images.entries()) {
     const fileUrl = img.resource_url;
-    const tmpFileResult = await saveImgToTempDir(type, fileUrl, data.id);
+    const tmpFileResult = await saveImgToTempDir(type, fileUrl, data.id, idx);
     console.log(JSON.stringify(tmpFileResult));
   }
   return true;

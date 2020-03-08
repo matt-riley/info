@@ -6,6 +6,7 @@ import * as discogsArtistInfo from './getArtist';
 import * as discogsLabelInfo from './getLabel';
 import * as totals from './totals';
 import * as tmpImgs from './getImages';
+import * as updImgs from './updateImgs';
 
 export const getArtist = discogsArtistInfo.getArtist;
 export const getLabel = discogsLabelInfo.getLabel;
@@ -14,3 +15,4 @@ export const releaseTotals = totals.releaseTotals;
 export const getArtistImgs = tmpImgs.getArtistImgs;
 export const getReleaseImgs = tmpImgs.getReleaseImgs;
 export const getLabelImgs = tmpImgs.getLabelImgs;
+export const updateImgs = updImgs.updateImgs;
