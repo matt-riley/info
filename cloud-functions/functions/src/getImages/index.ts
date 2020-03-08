@@ -1,11 +1,9 @@
 import axios from 'axios';
-import * as fs from 'fs';
 import * as functions from 'firebase-functions';
-import * as os from 'os';
 import * as path from 'path';
 import * as url from 'url';
 import {DocumentSnapshot} from 'firebase-functions/lib/providers/firestore';
-import {Storage, UploadResponse} from '@google-cloud/storage';
+import {Storage} from '@google-cloud/storage';
 import {CollectionArtistData} from '../interfaces/CollectionArtistData';
 import {CollectionLabelData} from '../interfaces/CollectionLabelData';
 import {CollectionReleaseData} from '../interfaces/CollectionReleaseData';
@@ -18,28 +16,27 @@ export const saveImgToTempDir = async (
   fileUrl: string,
   id: string | number,
   index: number,
-): Promise<UploadResponse> => {
+): Promise<string> => {
   const parsedUrl = url.parse(fileUrl);
   const fileName = path.basename(parsedUrl.pathname as string);
-  const tmpPath = path.join(os.tmpdir(), type.toLowerCase(), fileName);
-  const writer = fs.createWriteStream(tmpPath);
   const extension = path.extname(fileName);
-  const imgDL = await axios({
-    url: fileUrl,
-    method: 'GET',
+  const uploadFilePath = `images/${type.toLowerCase()}/${id}/${index}/${index}${extension}`;
+  const writer = storage
+    .bucket(BUCKET)
+    .file(uploadFilePath)
+    .createWriteStream({
+      gzip: false,
+      contentType: 'auto',
+    });
+  const imgDL = await axios.get(fileUrl, {
     responseType: 'stream',
   });
-
   imgDL.data.pipe(writer);
   new Promise((resolve, reject) => {
     writer.on('finish', resolve);
     writer.on('error', reject);
   });
-
-  const uploadFilePath = await storage.bucket(BUCKET).upload(tmpPath, {
-    gzip: false,
-    destination: `images/${type.toLowerCase()}/${id}/${index}/${index}${extension}`,
-  });
+  console.info(uploadFilePath);
   return uploadFilePath;
 };
 

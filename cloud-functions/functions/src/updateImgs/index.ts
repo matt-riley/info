@@ -9,8 +9,7 @@ export const updateImgs = functions.storage
     const filePath = event.name;
     const fileName = path.basename(filePath as string).split('.')[0];
     const fileNameMatch = fileName.match(/_\d+x\d+$/);
-    console.log(fileNameMatch?.length);
-    if (fileNameMatch && fileNameMatch.length === 0) {
+    if (fileNameMatch === null) {
       console.info('Not a resized image');
       return false;
     }
@@ -21,7 +20,6 @@ export const updateImgs = functions.storage
     const link = event.selfLink;
     const filePathSplit: string[] = filePath?.split('/') as string[];
     const type = filePathSplit[1];
-    console.log('HERE COME THE GIRLS');
     console.log(filePathSplit);
     console.log(link);
     console.log(type);
