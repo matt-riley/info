@@ -1313,35 +1313,7 @@
     p-defer "^3.0.0"
     protobufjs "^6.8.1"
 
-"@google-cloud/storage@4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-4.3.1.tgz#fce4c4ab74d3524ab040e0e15b9b50e6df13fd39"
-  integrity sha512-/i7tAcUZDQNDs8/+oN+U2mOXdWdP2eld0pFKLkpthmWmaD89JQlrgHAFL7uvlgCSbaD7YxgbSyJebgd6YBgMgQ==
-  dependencies:
-    "@google-cloud/common" "^2.1.1"
-    "@google-cloud/paginator" "^2.0.0"
-    "@google-cloud/promisify" "^1.0.0"
-    arrify "^2.0.0"
-    compressible "^2.0.12"
-    concat-stream "^2.0.0"
-    date-and-time "^0.12.0"
-    duplexify "^3.5.0"
-    extend "^3.0.2"
-    gaxios "^2.0.1"
-    gcs-resumable-upload "^2.2.4"
-    hash-stream-validation "^0.2.2"
-    mime "^2.2.0"
-    mime-types "^2.0.8"
-    onetime "^5.1.0"
-    p-limit "^2.2.0"
-    pumpify "^2.0.0"
-    readable-stream "^3.4.0"
-    snakeize "^0.1.0"
-    stream-events "^1.0.1"
-    through2 "^3.0.0"
-    xdg-basedir "^4.0.0"
-
-"@google-cloud/storage@^4.1.2":
+"@google-cloud/storage@4.5.0", "@google-cloud/storage@^4.1.2":
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-4.5.0.tgz#9255d13ffb2ef83080b5d374db3c687e3a07d576"
   integrity sha512-ZLFcR6CiP1AnYBA9eTtASF9Dy3wjYmGx+HZiy/LsIPN41wyBTn9yAjIOxRHiteqzX3uQzZ+VJNCB/DmTU33CeQ==
