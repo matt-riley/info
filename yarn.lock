@@ -1313,7 +1313,7 @@
     p-defer "^3.0.0"
     protobufjs "^6.8.1"
 
-"@google-cloud/storage@4.5.0", "@google-cloud/storage@^4.1.2":
+"@google-cloud/storage@4.5.0", "@google-cloud/storage@^4.1.2", "@google-cloud/storage@^4.5.0":
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-4.5.0.tgz#9255d13ffb2ef83080b5d374db3c687e3a07d576"
   integrity sha512-ZLFcR6CiP1AnYBA9eTtASF9Dy3wjYmGx+HZiy/LsIPN41wyBTn9yAjIOxRHiteqzX3uQzZ+VJNCB/DmTU33CeQ==
@@ -2547,15 +2547,15 @@ apollo-client@2.6.8:
     tslib "^1.10.0"
     zen-observable "^0.8.0"
 
-apollo-datasource-rest@0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-0.7.0.tgz#06912ef4f2542862d07b4e0de329d3f7fc407a05"
-  integrity sha512-lAYgm2GyUxnpKcZvReyCvNrQ8asEGy9yr9UB7xyFSCwdhgt8hvx92eYUD4z1KgRp8yOrainIOQxFkh8/SvPt6A==
+apollo-datasource-rest@0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-0.8.0.tgz#edb9c319bf569f42fe7b36c96332900e33bba1ad"
+  integrity sha512-eM/Ya4FUrKbd6+GaAPe2lIeK9/69YA8N/SIASeNlnqpox92IjQEvw8cBo/BOQccwyoA8pzxxn4soraUBiPZ8Hw==
   dependencies:
     apollo-datasource "^0.7.0"
     apollo-server-caching "^0.5.1"
     apollo-server-env "^2.4.3"
-    apollo-server-errors "^2.3.4"
+    apollo-server-errors "^2.4.0"
     http-cache-semantics "^4.0.0"
 
 apollo-datasource@^0.7.0:
@@ -2675,7 +2675,7 @@ apollo-server-env@^2.4.3:
     node-fetch "^2.1.2"
     util.promisify "^1.0.0"
 
-apollo-server-errors@^2.3.4, apollo-server-errors@^2.4.0:
+apollo-server-errors@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-2.4.0.tgz#3096db02b6ae8d434a6b2678f74eddaad8b98452"
   integrity sha512-ZouZfr2sGavvI18rgdRcyY2ausRAlVtWNOax9zca8ZG2io86dM59jXBmUVSNlVZSmBsIh45YxYC0eRvr2vmRdg==
