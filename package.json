@@ -21,7 +21,8 @@
     "cloud-functions/functions",
     "collection",
     "home",
-    "blog"
+    "blog",
+    "storybook"
   ],
   "devDependencies": {
     "@types/jest": "25.1.4",
