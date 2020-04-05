@@ -21,7 +21,8 @@
     "cloud-functions/functions",
     "collection",
     "home",
-    "blog"
+    "blog",
+    "svelte-home"
   ],
   "devDependencies": {
     "@types/jest": "25.2.1",
