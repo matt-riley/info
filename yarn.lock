@@ -2607,15 +2607,15 @@ apollo-client@2.6.8:
     tslib "^1.10.0"
     zen-observable "^0.8.0"
 
-apollo-datasource-rest@0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-0.8.0.tgz#edb9c319bf569f42fe7b36c96332900e33bba1ad"
-  integrity sha512-eM/Ya4FUrKbd6+GaAPe2lIeK9/69YA8N/SIASeNlnqpox92IjQEvw8cBo/BOQccwyoA8pzxxn4soraUBiPZ8Hw==
+apollo-datasource-rest@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-0.8.1.tgz#362ccb24d1307f873ccd5fcd8e6d1778cfa5d657"
+  integrity sha512-vbpkw6DJ+UByxyx8Fq/hqm3Wqe+gSRBf1qvan7uoWfh5/ScTDmLLfRSyyBW8rjLc9/MEs5utl0vWy6Do+5I3GA==
   dependencies:
     apollo-datasource "^0.7.0"
     apollo-server-caching "^0.5.1"
     apollo-server-env "^2.4.3"
-    apollo-server-errors "^2.4.0"
+    apollo-server-errors "^2.4.1"
     http-cache-semantics "^4.0.0"
 
 apollo-datasource@^0.7.0:
@@ -2735,11 +2735,6 @@ apollo-server-env@^2.4.3:
   dependencies:
     node-fetch "^2.1.2"
     util.promisify "^1.0.0"
-
-apollo-server-errors@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/apollo-server-errors/-/apollo-server-errors-2.4.0.tgz#3096db02b6ae8d434a6b2678f74eddaad8b98452"
-  integrity sha512-ZouZfr2sGavvI18rgdRcyY2ausRAlVtWNOax9zca8ZG2io86dM59jXBmUVSNlVZSmBsIh45YxYC0eRvr2vmRdg==
 
 apollo-server-errors@^2.4.1:
   version "2.4.1"
