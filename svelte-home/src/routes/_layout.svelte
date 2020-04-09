@@ -1,6 +1,6 @@
 <script lang="typescript">
 	// @ts-ignore: No default export
-	import Nav from '../components/Nav.svelte'
+	import Nav from '../components/Nav/index.svelte'
 
 	export let segment;
 </script>
@@ -11,7 +11,8 @@
 		display: grid;
 		grid-template-columns: 10vw 2fr;
 		min-height: 100vh;
-		grid-column-gap: 1em;
+		grid-column-gap: .5em;
+		padding-right: .5em;
 	}
 
 	wrapper {
@@ -20,7 +21,7 @@
 </style>
 
 <main>
-	<Nav {segment}/>
+	<Nav />
 	<wrapper>
 		<slot></slot>
 	</wrapper>

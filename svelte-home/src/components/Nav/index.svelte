@@ -1,16 +1,11 @@
 <script lang="typescript">
 	// @ts-ignore
 	import Logo from './logo.svelte'
-	export let segment;
 	let items = [
 		{ id: 1, name: 'Home', url: "/"},
 		{ id: 2, name: 'About', url: '/about'},
 	]
 
-	export const selected = (item) => {
-		if (`/${segment}` === item.url) return 'selected';
-		return '';
-	}
 </script>
 
 <style>
@@ -56,7 +51,6 @@
 		height: 100%; 
 	}
 </style>
-
 
 <nav>
 	<Logo />
