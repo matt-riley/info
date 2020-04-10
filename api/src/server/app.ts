@@ -1,5 +1,4 @@
 import * as Sentry from '@sentry/node';
-import LogRocket from 'logrocket';
 import express, { NextFunction, Request } from 'express';
 import helmet from 'helmet';
 import '../utils/dotEnv';
@@ -9,8 +8,6 @@ const app = express();
 Sentry.init({
   dsn: process.env.SENTRY_KEY
 })
-
-LogRocket.init(process.env.LOGROCKET)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(Sentry.Handlers.requestHandler());
