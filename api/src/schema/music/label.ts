@@ -1,4 +1,4 @@
-import { objectType } from 'nexus';
+import { objectType } from '@nexus/schema';
 
 const Label = objectType({
   description: 'Information about the label',

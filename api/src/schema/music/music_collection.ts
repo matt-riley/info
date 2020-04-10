@@ -1,4 +1,4 @@
-import { idArg, objectType} from 'nexus';
+import { idArg, objectType} from '@nexus/schema';
 import { NexusGenFieldTypes } from 'src/api-typegen';
 import admin from '../../utils/firebase';
 import Artist from './artist';
@@ -14,7 +14,7 @@ const MusicCollection = objectType({
       list: [true],
       nullable: false,
       type: Artist,
-      async resolve(): Promise<Array<NexusGenFieldTypes['Artist']>> {
+      async resolve(): Promise<NexusGenFieldTypes['Artist'][]> {
         const res = await admin.firestore().collection(`artists`).get();
         return res.docs.map((doc) => {
           return doc.data() as NexusGenFieldTypes['Artist'];
@@ -41,7 +41,7 @@ const MusicCollection = objectType({
       list: [true],
       nullable: false,
       type: Label,
-      async resolve(): Promise<Array<NexusGenFieldTypes['Label']>> {
+      async resolve(): Promise<NexusGenFieldTypes['Label'][]> {
         const res = await admin.firestore().collection(`labels`).get();
         return res.docs.map((doc) => {
           return doc.data() as NexusGenFieldTypes['Label'];
@@ -68,7 +68,7 @@ const MusicCollection = objectType({
       list: [true],
       nullable: false,
       type: Release,
-      async resolve(): Promise<Array<NexusGenFieldTypes['Release']>> {
+      async resolve(): Promise<NexusGenFieldTypes['Release'][]> {
         const res = await admin.firestore().collection(`releases`).get();
         return res.docs.map((doc) => {
           return doc.data() as NexusGenFieldTypes['Release'];

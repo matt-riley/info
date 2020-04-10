@@ -1,4 +1,4 @@
-import { intArg, objectType } from 'nexus';
+import { intArg, objectType } from '@nexus/schema';
 import MusicCollection from './music_collection';
 import Track from './track';
 

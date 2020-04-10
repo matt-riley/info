@@ -1,4 +1,4 @@
-import { objectType } from 'nexus';
+import { objectType } from '@nexus/schema';
 import { LastFMRecentTrack } from '../../interfaces/lastfm_recent_tracks';
 
 const Track = objectType({

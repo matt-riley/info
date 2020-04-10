@@ -1,4 +1,4 @@
-import { objectType } from 'nexus';
+import { objectType } from '@nexus/schema';
 import { NexusGenFieldTypes, NexusGenRootTypes } from 'src/api-typegen';
 import admin from '../../utils/firebase';
 import Artist from './artist';

@@ -63,15 +63,15 @@ export interface NexusGenFieldTypes {
   };
   Music: { // field return type
     collection: NexusGenRootTypes['MusicCollection'] | null; // MusicCollection
-    recentTracks: Array<NexusGenRootTypes['Track']> | null; // [Track!]
+    recentTracks: NexusGenRootTypes['Track'][] | null; // [Track!]
   };
   MusicCollection: { // field return type
     artist: NexusGenRootTypes['Artist']; // Artist!
-    artists: Array<NexusGenRootTypes['Artist']>; // [Artist!]!
+    artists: NexusGenRootTypes['Artist'][]; // [Artist!]!
     label: NexusGenRootTypes['Label']; // Label!
-    labels: Array<NexusGenRootTypes['Label']>; // [Label!]!
+    labels: NexusGenRootTypes['Label'][]; // [Label!]!
     release: NexusGenRootTypes['Release']; // Release!
-    releases: Array<NexusGenRootTypes['Release']>; // [Release!]!
+    releases: NexusGenRootTypes['Release'][]; // [Release!]!
   };
   Mutation: { // field return type
     addRelease: NexusGenRootTypes['Release']; // Release!
@@ -80,7 +80,7 @@ export interface NexusGenFieldTypes {
     music: NexusGenRootTypes['Music']; // Music!
   };
   Release: { // field return type
-    artists: Array<NexusGenRootTypes['Artist']>; // [Artist!]!
+    artists: NexusGenRootTypes['Artist'][]; // [Artist!]!
     country: string; // String!
     genres: string[] | null; // [String!]
     id: string; // ID!
