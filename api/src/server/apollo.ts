@@ -24,6 +24,11 @@ const apollo = new ApolloServer({
   persistedQueries: false,
   schema: applyMiddleware(schema, timeTreeMiddleWare),
   subscriptions: false,
+  formatResponse: (response) => {
+    timer.end()
+    logger.info(timer.getResult())
+    return response;
+  }
 });
 
 export default apollo;
