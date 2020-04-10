@@ -7,12 +7,12 @@ export const timeTreeMiddleWare = async (resolve: () => any, _parent: any, _args
   try {
     const result = await resolve();
     newTimer.end()
+    timer.end()
+    logger.info(timer.getResult())
     return result
   } catch (error) {
     newTimer.end()
     logger.error(error)
     throw error
   }
-  timer.end()
-  logger.info(timer.getResult())
 }
