@@ -2,7 +2,7 @@ import {
   makeSchema,
   objectType,
   stringArg,
-} from 'nexus';
+} from '@nexus/schema';
 
 import path from 'path';
 import { NexusGenFieldTypes } from 'src/api-typegen';
