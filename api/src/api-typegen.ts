@@ -3,7 +3,7 @@
  * Do not make changes to this file directly
  */
 
-import * as t from "./schema/typeDefs"
+import * as t from './schema/typeDefs'
 
 
 
@@ -68,11 +68,7 @@ export interface NexusGenFieldTypes {
   Music: { // field return type
     collection: NexusGenRootTypes['MusicCollection'] | null; // MusicCollection
     recentTracks: NexusGenRootTypes['Track'][] | null; // [Track!]
-<<<<<<< HEAD
   };
-=======
-  }
->>>>>>> 1103785... [#70] Started the middleware
   MusicCollection: { // field return type
     artist: NexusGenRootTypes['Artist']; // Artist!
     artists: NexusGenRootTypes['Artist'][]; // [Artist!]!
@@ -80,11 +76,7 @@ export interface NexusGenFieldTypes {
     labels: NexusGenRootTypes['Label'][]; // [Label!]!
     release: NexusGenRootTypes['Release']; // Release!
     releases: NexusGenRootTypes['Release'][]; // [Release!]!
-<<<<<<< HEAD
   };
-=======
-  }
->>>>>>> 1103785... [#70] Started the middleware
   Mutation: { // field return type
     addRelease: NexusGenRootTypes['Release']; // Release!
   }
@@ -135,7 +127,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Artist" | "Label" | "Music" | "MusicCollection" | "Mutation" | "Query" | "Release" | "Track";
+export type NexusGenObjectNames = 'Artist' | 'Label' | 'Music' | 'MusicCollection' | 'Mutation' | 'Query' | 'Release' | 'Track';
 
 export type NexusGenInputNames = never;
 
@@ -143,7 +135,7 @@ export type NexusGenEnumNames = never;
 
 export type NexusGenInterfaceNames = never;
 
-export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
+export type NexusGenScalarNames = 'Boolean' | 'Float' | 'ID' | 'Int' | 'String';
 
 export type NexusGenUnionNames = never;
 
