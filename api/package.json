@@ -10,7 +10,7 @@
     "@google-cloud/profiler": "3.0.1",
     "@google-cloud/storage": "4.7.0",
     "@google-cloud/trace-agent": "4.2.5",
-    "@nexus/schema": "0.12.0-rc.13",
+    "@nexus/schema": "0.13.1",
     "@sentry/node": "5.15.4",
     "apollo-datasource-rest": "0.8.1",
     "apollo-server-express": "2.12.0",
