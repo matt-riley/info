@@ -8,5 +8,4 @@ build/
 lib/
 service-account.json
 env_variables.yaml
-__sapper__/
 cypress/screenshots/
