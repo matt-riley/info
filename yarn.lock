@@ -11380,12 +11380,12 @@ rollup-plugin-babel@4.4.0:
     "@babel/helper-module-imports" "^7.0.0"
     rollup-pluginutils "^2.8.1"
 
-rollup-plugin-svelte-svg@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-svelte-svg/-/rollup-plugin-svelte-svg-0.2.1.tgz#1dbfaf30969b3b38b270161f84d27e63ef4f8605"
-  integrity sha512-Ab7MHgsWlP+95BGNANaMsVGcnsHey0PM3G2zcU9AX2dAu2JUZh+lK50dB63W0EKvZhgqyVNi1UlHyOiKG+DDkg==
+rollup-plugin-svelte-svg@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-svelte-svg/-/rollup-plugin-svelte-svg-0.2.2.tgz#90824e65e99e1b101e6b6a3f37819176c6a009f0"
+  integrity sha512-B/3uoYsJA2ucdj3I52T/eyCy7LHtUijTufAyrrVcKurn3nC9a+WQTKD8OfMkgi39cI39rakuQPpcHtYVOCYjpA==
   dependencies:
-    rollup-pluginutils "^1.3.1"
+    rollup-pluginutils "^1.5.2"
 
 rollup-plugin-svelte@5.2.1:
   version "5.2.1"
@@ -11418,7 +11418,7 @@ rollup-plugin-typescript2@0.27.0:
     resolve "1.15.1"
     tslib "1.11.1"
 
-rollup-pluginutils@^1.3.1:
+rollup-pluginutils@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/rollup-pluginutils/-/rollup-pluginutils-1.5.2.tgz#1e156e778f94b7255bfa1b3d0178be8f5c552408"
   integrity sha1-HhVud4+UtyVb+hs9AXi+j1xVJAg=
