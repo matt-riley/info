@@ -1,23 +1,22 @@
-<script lang="typescript">
-	// @ts-ignore
+<script>
 	import Card from '../components/Card/index.svelte'
-	let title: string = "Matt Riley (dot) Info"
+	let title = "Matt Riley (dot) Info"
 	export const cards = [
 		{
 			title: "Github",
-			img: "https://via.placeholder.com/50"
+			img: "https://picsum.photos/50"
 		},
 		{
 			title: "Twitter",
-			img: "https://via.placeholder.com/50"
+			img: "https://picsum.photos/50"
 		},
 		{
 			title: "Music",
-			img: "https://via.placeholder.com/50"
+			img: "https://picsum.photos/50"
 		},
 		{
 			title: "Insta",
-			img: "https://via.placeholder.com/50"
+			img: "https://picsum.photos/50"
 		}
 	]
 </script>

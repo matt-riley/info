@@ -1,26 +1,15 @@
 {
   "hosting": {
-    "site": "mattriley-info",
-    "public": "public",
-    "rewrites": [
-      {
-        "source": "/blog{,/**}",
-        "destination": "/blog"
-      },
-      {
-        "source": "**/**",
-        "function": "indexNextjs-server"
-      }
-    ]
-  },
-  "functions": {
-    "source": ".",
+    "predeploy": "npm run build",
+    "public": "static",
     "ignore": [
-      ".firebase/**",
-      ".firebaserc",
       "firebase.json",
-      "**/node_modules/**",
-      "**/public/**"
-    ]
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [{
+      "source": "**",
+      "function": "ssr"
+    }]
   }
 }

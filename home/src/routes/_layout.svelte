@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script>
 	// @ts-ignore: No default export
 	import Nav from '../components/Nav/index.svelte'
 
