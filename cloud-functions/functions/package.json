@@ -6,7 +6,7 @@
     "serve": "npm run build && firebase serve --only functions",
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
+    "deploy": "firebase deploy --only functions:getArtist,functions:getLabel,functions:artistTotals,functions:releaseTotals,functions:getArtistImgs,functions:getReleaseImgs,functions:getLabelImgs,functions:updateImgs",
     "logs": "firebase functions:log",
     "lint": "eslint ./src/**/* --ext .ts,.tsx",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(ts|tsx|json)\"",
@@ -22,11 +22,11 @@
     "@google-cloud/storage": "4.7.0",
     "axios": "0.19.2",
     "compression": "1.7.4",
+    "cosha": "0.3.9",
     "express": "4.17.1",
     "firebase-admin": "8.10.0",
     "firebase-functions": "3.6.0",
-    "polka": "0.5.2",
-    "sirv": "0.4.2"
+    "sirv": "0.4.0"
   },
   "devDependencies": {
     "@types/axios": "0.14.0",
@@ -40,7 +40,7 @@
     "jest": "25.3.0",
     "prettier": "2.0.4",
     "ts-jest": "25.3.1",
-    "typescript": "3.8.3"
+    "typescript": "^3.8.3"
   },
   "private": true,
   "eslintConfig": {

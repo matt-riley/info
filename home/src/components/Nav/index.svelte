@@ -1,11 +1,9 @@
-<script lang="typescript">
-	// @ts-ignore
+<script>
 	import Logo from './logo.svelte'
 	let items = [
 		{ id: 1, name: 'Home', url: "/"},
 		{ id: 2, name: 'About', url: '/about'},
 	]
-
 </script>
 
 <style>

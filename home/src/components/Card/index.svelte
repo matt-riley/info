@@ -18,8 +18,8 @@
     position: absolute;
     display: block;
     content: "";
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
     background: inherit;
     z-index: -1;
     top: -5px;
