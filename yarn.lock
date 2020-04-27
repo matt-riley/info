@@ -4890,10 +4890,10 @@ cors@^2.8.4, cors@^2.8.5:
     object-assign "^4"
     vary "^1"
 
-cosha@0.3.10:
-  version "0.3.10"
-  resolved "https://registry.yarnpkg.com/cosha/-/cosha-0.3.10.tgz#2b36ce7127cd80a8343208f5c861dcd28f041a66"
-  integrity sha512-f+XbRU3fDbG0xecztwqDQgXt0MY9nQ5Nd+JEH+kEgPa2Ljwy0lxDdMmDoKyjYvXGgFqD4+3fuQ9OQk0FQVtO+A==
+cosha@0.3.11:
+  version "0.3.11"
+  resolved "https://registry.yarnpkg.com/cosha/-/cosha-0.3.11.tgz#fce44bddc2d54dbe2651bf8d278f4b05a511ddb1"
+  integrity sha512-kPSbYwy62ceR16fDbLO7AOvw9/aorkziyT2v+yN8jVO47vHXmlDLT9djIdokRSVJZdlYbbnhlGNiqY6jl/KSrw==
 
 cosmiconfig@^5.0.0, cosmiconfig@^5.2.0:
   version "5.2.1"
