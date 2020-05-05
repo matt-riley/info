@@ -2838,10 +2838,10 @@ apollo-client@2.6.8:
     tslib "^1.10.0"
     zen-observable "^0.8.0"
 
-apollo-datasource-rest@0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-0.8.1.tgz#362ccb24d1307f873ccd5fcd8e6d1778cfa5d657"
-  integrity sha512-vbpkw6DJ+UByxyx8Fq/hqm3Wqe+gSRBf1qvan7uoWfh5/ScTDmLLfRSyyBW8rjLc9/MEs5utl0vWy6Do+5I3GA==
+apollo-datasource-rest@0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/apollo-datasource-rest/-/apollo-datasource-rest-0.9.0.tgz#20075ecee76c218930f9af5ba0e783023111b217"
+  integrity sha512-UeukRXbuamqhe1P6f0/vVE8iHE4VOWTUULJrDVBysJmw4kMH2kGdc8tlqJGFStmCUtazW0CgWmvpJIPv9Va4kg==
   dependencies:
     apollo-datasource "^0.7.0"
     apollo-server-caching "^0.5.1"
