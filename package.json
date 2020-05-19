@@ -24,7 +24,7 @@
     "blog"
   ],
   "devDependencies": {
-    "@types/jest": "25.2.2",
+    "@types/jest": "25.2.3",
     "jest": "26.0.1",
     "ts-jest": "25.5.1",
     "yarn-deduplicate": "^2.0.0"
