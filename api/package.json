@@ -8,7 +8,7 @@
   "dependencies": {
     "@google-cloud/logging-winston": "3.0.6",
     "@google-cloud/profiler": "4.0.0",
-    "@google-cloud/storage": "5.0.0",
+    "@google-cloud/storage": "5.0.1",
     "@google-cloud/trace-agent": "4.2.5",
     "@nexus/schema": "0.13.1",
     "@sentry/node": "5.15.5",
