@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: graphql
+    versions:
+    - ">= 15.0.a, < 15.1"
+  - dependency-name: graphql
+    versions:
+    - ">= 15.1.a, < 15.2"
+  commit-message:
+    prefix: chore
+    include: scope
