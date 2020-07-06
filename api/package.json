@@ -11,7 +11,7 @@
     "@google-cloud/storage": "5.1.0",
     "@google-cloud/trace-agent": "5.1.0",
     "@nexus/schema": "0.14.0",
-    "@sentry/node": "5.18.0",
+    "@sentry/node": "5.19.0",
     "apollo-datasource-rest": "0.9.3",
     "apollo-server-express": "2.15.0",
     "dotenv": "8.2.0",
