@@ -31,7 +31,7 @@
     "@types/express-enforces-ssl": "1.1.1",
     "@types/helmet": "0.0.47",
     "@types/memcached": "2.2.6",
-    "@types/node": "14.0.13",
+    "@types/node": "14.0.20",
     "@types/node-fetch": "2.5.7",
     "commitizen": "4.1.2",
     "cz-conventional-changelog": "3.2.0",
