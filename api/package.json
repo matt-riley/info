@@ -29,7 +29,7 @@
     "@arkweid/lefthook": "0.7.2",
     "@types/express": "4.17.7",
     "@types/express-enforces-ssl": "1.1.1",
-    "@types/helmet": "0.0.47",
+    "@types/helmet": "0.0.48",
     "@types/memcached": "2.2.6",
     "@types/node": "14.6.0",
     "@types/node-fetch": "2.5.7",
