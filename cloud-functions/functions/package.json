@@ -24,7 +24,7 @@
     "compression": "1.7.4",
     "cosha": "0.3.12",
     "express": "4.17.1",
-    "firebase-admin": "9.0.0",
+    "firebase-admin": "9.1.1",
     "firebase-functions": "3.9.0",
     "sirv": "1.0.6"
   },
