@@ -22,3 +22,14 @@ jobs:
         run: yarn
       - name: Execute build
         run: yarn workspaces run build
+  automerge:
+    runs-on: ubuntu-latest
+    needs: runBuild
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - name: automerge
+        uses: pascalgn/automerge-action@v0.9.0
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_METHOD: "rebase"
+          MERGE_LABELS: "dependencies"
