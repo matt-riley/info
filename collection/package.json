@@ -18,7 +18,7 @@
     "next": "9.5.5",
     "next-with-apollo": "5.1.0",
     "react": "17.0.0",
-    "react-dom": "17.0.0"
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
     "@types/react": "16.9.53",
