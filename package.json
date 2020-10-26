@@ -27,6 +27,6 @@
     "@types/jest": "26.0.15",
     "jest": "26.6.0",
     "ts-jest": "26.4.1",
-    "yarn-deduplicate": "^3.0.0"
+    "yarn-deduplicate": "^3.1.0"
   }
 }
