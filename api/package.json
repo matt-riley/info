@@ -20,7 +20,7 @@
     "firebase-admin": "9.3.0",
     "graphql": "15.4.0",
     "graphql-middleware": "4.0.2",
-    "helmet": "4.1.1",
+    "helmet": "4.2.0",
     "time-tree": "0.3.0",
     "winston": "3.3.3"
   },
