@@ -31,7 +31,7 @@
     "firebase-tools": "9.1.0",
     "gulp": "4.0.2",
     "npm-run-all": "4.1.5",
-    "postcss": "8.2.2",
+    "postcss": "8.2.4",
     "postcss-load-config": "3.0.0",
     "rollup": "2.35.1",
     "rollup-plugin-babel": "4.4.0",
