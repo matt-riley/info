@@ -19,7 +19,7 @@
     "express-enforces-ssl": "1.1.0",
     "firebase-admin": "9.4.2",
     "graphql": "15.4.0",
-    "graphql-middleware": "4.0.2",
+    "graphql-middleware": "6.0.7",
     "helmet": "4.3.1",
     "time-tree": "0.3.0",
     "winston": "3.3.3"
