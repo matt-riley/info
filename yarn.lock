@@ -1634,10 +1634,10 @@
     "@opentelemetry/resources" "^0.11.0"
     "@opentelemetry/semantic-conventions" "^0.11.0"
 
-"@polka/url@^1.0.0-next.11", "@polka/url@^1.0.0-next.9":
-  version "1.0.0-next.11"
-  resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.11.tgz#aeb16f50649a91af79dbe36574b66d0f9e4d9f71"
-  integrity sha512-3NsZsJIA/22P3QUyrEDNA2D133H4j224twJrdipXN38dpnIOzAbUDtOwkcJ5pXmn75w7LSQDjA4tO9dm1XlqlA==
+"@polka/url@^1.0.0-next.15", "@polka/url@^1.0.0-next.9":
+  version "1.0.0-next.15"
+  resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.15.tgz#6a9d143f7f4f49db2d782f9e1c8839a29b43ae23"
+  integrity sha512-15spi3V28QdevleWBNXE4pIls3nFZmBbUGrW9IVPwiQczuSb9n76TCB4bsk8TSel+I1OkHEdPhu5QKMfY6rQHA==
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -10889,11 +10889,11 @@ pnp-webpack-plugin@1.6.4:
     ts-pnp "^1.1.6"
 
 polka@next:
-  version "1.0.0-next.11"
-  resolved "https://registry.yarnpkg.com/polka/-/polka-1.0.0-next.11.tgz#b1543043c6e5e3c19f6b8f6835b41dfcc13be583"
-  integrity sha512-M/HBkS6ILksrDq7uvktCTev81OzuLwNtpxMyYdUhxLKQlMWdsu789XMotQU+p8JY8CM8vx8ML0HudyWjRus/lg==
+  version "1.0.0-next.15"
+  resolved "https://registry.yarnpkg.com/polka/-/polka-1.0.0-next.15.tgz#04190847b4bc598261755a29c51872ea8259cc77"
+  integrity sha512-zBCZO40+USkSj0GDHMqufthqk4TIRc9xVGd50LbMvYNEwGHK8dZczLBQtw9pPHBM+i/Xg7ed7+c+r6J68XkWLg==
   dependencies:
-    "@polka/url" "^1.0.0-next.11"
+    "@polka/url" "^1.0.0-next.15"
     trouter "^3.1.0"
 
 portfinder@^1.0.23:
