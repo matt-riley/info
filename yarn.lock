@@ -2115,10 +2115,10 @@
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.1.tgz#459c65fa1867dafe6a8f322c4c51695663cc55e9"
   integrity sha512-5tXH6Bx/kNGd3MgffdmP4dy2Z+G4eaXw0SE81Tq3BNadtnMR5/ySMzX4SLEzHJzSmPNn4HIdpQsBvXMUykr58w==
 
-"@types/memcached@2.2.6":
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/@types/memcached/-/memcached-2.2.6.tgz#f2b6a01e5344efb51a4176dd471dbd75f7066acd"
-  integrity sha512-7FTcKNkfzc7tfywZo0qtAbAnKTQoyDbCB4xQXXSVQqbXM0PQy0hRFPVymLoicBwaKLqDbL8thRGvF3wKRTnwvg==
+"@types/memcached@2.2.7":
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/@types/memcached/-/memcached-2.2.7.tgz#b3de026a11a4c0a18fb079cfeeaea10a41da20f9"
+  integrity sha512-ImJbz1i8pl+OnyhYdIDnHe8jAuM8TOwM/7VsciqhYX3IL0jPPUToAtVxklfcWFGYckahEYZxhd9FS0z3MM1dpA==
   dependencies:
     "@types/node" "*"
 
